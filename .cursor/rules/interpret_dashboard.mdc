@@ -5,87 +5,73 @@ alwaysApply: false
 # interpret_dashboard.mdc
 
 ## Trigger
-User opens or references a markdown file with the filename structure `*-description.md`
+When a user opens or references a file named `*-description.md` in the `/outputs/` directory.
 
 ## Behavior
-When a user opens or references a Flipside Crypto dashboard description, Cursor must:
+You are an expert in dashboard documentation and blockchain analytics workflows. When activated, your task is to generate a `CONTEXT.md` file in the same directory that summarizes the dashboard’s analytical intent, components, and metadata for use by analytics MCP tools.
 
-### 1. Parse and Extract All Visualizations
-- Identify all charts, tables, graphs, and other visual elements
-- Extract chart types (bar, line, pie, scatter, etc.)
-- Capture data dimensions and metrics being displayed
-- Note any interactive elements or filters
+### 1. Visualization Analysis
+- Identify and list all charts, graphs, and tables mentioned.
+- Determine visualization types (bar, line, pie, scatter, etc.).
+- Extract dimensions, metrics, and aggregation logic shown.
+- Note any filters, selectors, or interactive elements described.
 
-### 2. Extract Explanatory Text
-- Capture dashboard title and description
-- Extract any annotations or explanatory text
-- Identify key insights or conclusions presented
-- Note any methodology explanations
+### 2. Content & Narrative Parsing
+- Extract and summarize the dashboard title and overview.
+- Identify all explanatory text, annotations, and callouts.
+- Distill key insights, business conclusions, and stated findings.
+- Highlight any methodological explanations or assumptions.
 
-### 3. Generate Comprehensive Markdown Documentation
-Output a structured markdown document named CONTEXT.md in the same directory as the description containing:
+### 3. SQL and Data Source Evaluation
+- If SQL queries are referenced or included:
+  - Parse them and document:
+    - Tables and schemas used
+    - Joins, filters, groupings, aggregations
+    - Input parameters or dynamic components
+  - Associate queries with their respective visualizations.
+- If SQL is not included:
+  - Suggest possible source tables based on visualization content.
+  - Provide exploratory prompts for catalog discovery in Snowflake.
+  - Create template SQL patterns for each visualization type.
+
+### 4. Blockchain Analytics Context
+- Identify blockchain-specific concepts (e.g., TVL, gas, wallet counts).
+- Note any time-based aggregations or protocol-specific metrics.
+- Document any cross-chain relationships or logic.
+
+### 5. CONTEXT.md Structure
+Generate a markdown document with the following clearly delineated sections:
 
 #### Abstract
-- What the dashboard represents
-- Business purpose and target audience
-- Key metrics and KPIs tracked
-- Time period covered
+- Dashboard intent and use case
+- Target audience (e.g., investors, protocol teams)
+- Key business questions answered
+- Time range and dataset relevance
 
 #### Visualization Inventory
-- Complete list of all visualizations
-- Chart type and purpose for each
-- Data sources and metrics used
-- Interactive capabilities
+- Enumeration of visuals with:
+  - Chart type and objective
+  - Associated metrics and dimensions
+  - Interactive/filter features
+  - Linked SQL (if available)
 
-#### Associated Explanations
-- Context for each visualization
-- Key insights and takeaways
-- Business implications
-- Trend analysis and observations
+#### Narrative Insights
+- Summarized textual insights from the description
+- Notable trends or anomalies
+- High-level takeaways
 
-#### Style Guide Documentation
-- Layout patterns and grid system
-- Color palette usage and meaning
-- Font hierarchy and typography
-- UX patterns and user interaction cues
-- Responsive design considerations
+#### Data Source Details
+- SQL coverage (if present): tables, joins, filters, logic
+- If absent: recommended discovery paths and Snowflake query templates
 
-### 4. SQL and Data Source Handling
+#### UX & Style Notes (Optional)
+- Mention layout conventions, color cues, or user experience patterns if described
 
-#### If Original SQL is Included:
-If available, associated SQL (and possibly result sets in the form of CSV files) will be available in the /assets directory of the dashboard artifact archive.
-- Embed SQL queries for each chart/visualization
-- Create comprehensive data source inventory:
-  - Table names and schemas
-  - Required columns and data types
-  - Join relationships
-  - Filtering conditions
-  - Aggregation logic
+#### Migration & MCP Recommendations
+- Suggest MCP actions for validating reproduced dashboards
+- Propose test cases or validation queries
+- Highlight risks: external dependencies, stale data, unclear logic
 
-#### If Original SQL is NOT Included:
-- Generate discovery prompts for finding relevant tables
-- Define query construction approach based on visual intent
-- Recommend Snowflake catalog exploration steps:
-  - Suggested tables to investigate
-  - Column naming patterns to search for
-  - Common blockchain data structures to explore
-- Create template SQL structures for each visualization type
+### Output
+Write the structured `CONTEXT.md` file into the same folder as the `*-description.md`. Ensure it is clean, professional, and formatted for both technical and business audiences.
 
-### 5. Blockchain Analytics Considerations
-- Identify blockchain-specific metrics (TVL, volume, unique addresses, etc.)
-- Note time-based aggregations (daily, weekly, monthly)
-- Capture protocol-specific logic or calculations
-- Document any cross-chain analysis requirements
-
-### 6. Migration Recommendations
-- Suggest MCP tool calls for data validation
-- Recommend testing strategies for recreated dashboards
-- Identify potential data quality issues
-- Note dependencies on external data sources
-
-## Output Format
-Generate a markdown file with clear sections and consistent formatting suitable for:
-- Technical documentation
-- Business stakeholder review
-- Developer handoff
-- Future maintenance and updates
