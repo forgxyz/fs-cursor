@@ -6,11 +6,12 @@ alwaysApply: true
 
 # Analytics Workflow for Blockchain Analytics Questions
 
-This rule provides the meta prompt for handling all blockchain analytics questions.
+This rule provides the meta prompt for handling all blockchain analytics questions. The general workflow is determine analysis target->build and execute queries->build dashboard, following the logging rules the whole time. The output will be a dashboard in the form of a static HTML page. The workflow must utilize the Flipside MCP tooling to drive analysis.  
 
 ## Process Overview
 
-1. **Read Process Guidelines**: First, read the `@log_methodology.mdc` rule for general guidelines on how to keep track of your process and methodology. Remember that the cursor/ directory should be in the same working directory as the dashboard information. If the workflow is NOT based on a dashboard archive, create a new directory in outputs/ with the analysis name.
+1. **Read Process Guidelines**: First, read the `@log_methodology.mdc` rule for general guidelines on how to keep track of your process and methodology. Remember that the cursor/ directory should be in the same working directory as the dashboard information. If the workflow is NOT based on a dashboard archive, create a new directory in outputs/ with the analysis name.  
+LOG AS YOU GO!  
 
 2. **Remember Autonomous Execution**: Keep in mind the `@run_commands_autonomously.mdc` rule - execute commands and queries autonomously without asking for permission.
 
@@ -23,7 +24,7 @@ This rule provides the meta prompt for handling all blockchain analytics questio
    - Refer to `@flipside_mcp_tools.mdc` for detailed instructions on using MCP tools to access data
    - Prioritize Snowflake warehouse data as the primary source
    - Use web search tools for validation purposes only
-   - **Important**: Defillama should be prioritized as a secondary data source for validation - note that Defillama tables are available in Snowflake
+   - **Important**: Defillama should be prioritized as a secondary data source for validation - note that Defillama tables are available in Snowflake and can be used to validate calculated onchain metrics.
 
 5. **Generate and Execute Queries**:
    - **ALWAYS** prioritize running queries against the warehouse to determine metrics instead of using old csv files or searching the web
