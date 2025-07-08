@@ -1,0 +1,152 @@
+---
+alwaysApply: true
+---
+
+# always_log_sql.mdc
+
+## Trigger
+Any time SQL is generated, modified, or executed
+
+## Behavior
+Whenever Claude Code generates, modifies, or helps execute SQL queries, it must:
+
+### 1. Create Timestamped SQL Log
+- Append generated SQL to a local `.sql` file with timestamp
+- File naming pattern: `YYYY-MM-DD_<workflow title>.sql`
+- Generated sql should be separated by a semicolon ;
+- SQL must follow Snowflake SQL syntax
+- Append all SQL for SIMILAR WORKFLOWS into the same file FOR THAT DATE
+- If the analyst begins a new conversation or changes topics, create a new file
+
+### 2. Include Comprehensive Context
+Each SQL entry must include a preceding comment block with:
+
+#### Query Metadata
+```sql
+-- =============================================================================
+-- QUERY LOG ENTRY
+-- Timestamp: [ISO 8601 format]
+-- Session ID: [unique session identifier]
+-- User: [if known/available]
+-- =============================================================================
+```
+
+#### Business Context
+```sql
+-- BUSINESS CONTEXT:
+-- Question/Request: [what analytical question triggered this query]
+-- Dashboard/Component: [which dashboard or component this relates to]
+-- Stakeholder: [who initiated the request, if known]
+-- Expected Output: [what format/visualization this feeds into]
+```
+
+#### Technical Context
+```sql
+-- TECHNICAL CONTEXT:
+-- Query Type: [SELECT, INSERT, UPDATE, DELETE, CREATE, etc.]
+-- Data Sources: [tables and schemas accessed]
+-- Complexity: [SIMPLE, MODERATE, COMPLEX]
+-- Dependencies: [other queries or data this depends on]
+-- Performance Notes: [expected execution time, optimization notes]
+```
+
+#### Blockchain-Specific Context
+```sql
+-- BLOCKCHAIN CONTEXT:
+-- Protocol(s): [Ethereum, Polygon, BSC, etc.]
+-- Metric Type: [TVL, Volume, Users, Transactions, etc.]
+-- Time Range: [specific date range being analyzed]
+-- Aggregation: [daily, weekly, monthly, etc.]
+-- Chain-specific Logic: [any protocol-specific calculations]
+```
+
+### 3. Version Control Integration
+- Include git commit hash if available
+- Note any related branch or PR information
+- Tag queries that are part of dashboard migrations
+
+### 4. Query Classification
+Add classification tags:
+```sql
+-- TAGS: [exploration, production, debugging, migration, optimization]
+-- PRIORITY: [LOW, MEDIUM, HIGH, CRITICAL]
+-- REUSABILITY: [one-time, template, recurring]
+```
+
+### 5. Error Handling and Debugging
+When SQL fails or needs debugging:
+```sql
+-- ERROR LOG:
+-- Error Message: [full error text]
+-- Attempted Fix: [what was tried to resolve]
+-- Resolution: [final working solution]
+-- Lessons Learned: [insights for future queries]
+```
+
+### 6. Performance Tracking
+For complex queries, log:
+```sql
+-- PERFORMANCE METRICS:
+-- Estimated Rows: [expected result set size]
+-- Execution Time: [if measured]
+-- Resource Usage: [memory, CPU notes]
+-- Optimization Applied: [indexes, query hints, etc.]
+```
+
+### 7. File Organization
+- Create separate directories for different projects/dashboards
+- Use consistent naming conventions
+- Include monthly archives for long-term storage
+
+### 8. Security and Compliance
+- Never log sensitive data or credentials
+- Redact any PII or confidential information
+- Include compliance notes for regulatory requirements
+
+## Example Output Format
+```sql
+-- =============================================================================
+-- QUERY LOG ENTRY
+-- Timestamp: 2024-01-15T14:30:00Z
+-- Session ID: sess_abc123
+-- User: analyst@company.com
+-- =============================================================================
+-- BUSINESS CONTEXT:
+-- Question/Request: Show daily DEX trading volume on Ethereum for last 30 days
+-- Dashboard/Component: DEX Analytics Overview - Volume Trends Chart
+-- Stakeholder: Trading Desk Team
+-- Expected Output: Line chart visualization
+-- =============================================================================
+-- TECHNICAL CONTEXT:
+-- Query Type: SELECT
+-- Data Sources: ethereum.dex.trades, ethereum.core.blocks
+-- Complexity: MODERATE
+-- Dependencies: Block timestamp calculations
+-- Performance Notes: Uses indexed trade_date column
+-- =============================================================================
+-- BLOCKCHAIN CONTEXT:
+-- Protocol(s): Ethereum
+-- Metric Type: Volume
+-- Time Range: Last 30 days
+-- Aggregation: Daily
+-- Chain-specific Logic: DEX aggregation across multiple protocols
+-- =============================================================================
+-- TAGS: production, recurring
+-- PRIORITY: HIGH
+-- REUSABILITY: template
+-- =============================================================================
+
+SELECT 
+    DATE_TRUNC('day', block_timestamp) as trade_date,
+    SUM(amount_usd) as daily_volume_usd,
+    COUNT(*) as total_trades
+FROM ethereum.dex.trades t
+JOIN ethereum.core.blocks b ON t.block_number = b.block_number
+WHERE block_timestamp >= CURRENT_DATE - INTERVAL '30 days'
+GROUP BY DATE_TRUNC('day', block_timestamp)
+ORDER BY trade_date;
+
+-- =============================================================================
+-- END QUERY LOG ENTRY
+-- =============================================================================
+```

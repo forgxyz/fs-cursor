@@ -1,0 +1,90 @@
+---
+globs: *.html
+alwaysApply: false
+---
+# interpret_dashboard.mdc
+
+## Trigger
+User opens or references a legacy HTML dashboard
+
+## Behavior
+When a user opens or references an HTML dashboard (especially one exported from Flipside via Dashboard Porter), Claude Code must:
+
+### 1. Parse and Extract All Visualizations
+- Identify all charts, tables, graphs, and other visual elements
+- Extract chart types (bar, line, pie, scatter, etc.)
+- Capture data dimensions and metrics being displayed
+- Note any interactive elements or filters
+
+### 2. Extract Explanatory Text
+- Capture dashboard title and description
+- Extract any annotations or explanatory text
+- Identify key insights or conclusions presented
+- Note any methodology explanations
+
+### 3. Generate Comprehensive Markdown Documentation
+Output a structured markdown document containing:
+
+#### Abstract
+- What the dashboard represents
+- Business purpose and target audience
+- Key metrics and KPIs tracked
+- Time period covered
+
+#### Visualization Inventory
+- Complete list of all visualizations
+- Chart type and purpose for each
+- Data sources and metrics used
+- Interactive capabilities
+
+#### Associated Explanations
+- Context for each visualization
+- Key insights and takeaways
+- Business implications
+- Trend analysis and observations
+
+#### Style Guide Documentation
+- Layout patterns and grid system
+- Color palette usage and meaning
+- Font hierarchy and typography
+- UX patterns and user interaction cues
+- Responsive design considerations
+
+### 4. SQL and Data Source Handling
+
+#### If Original SQL is Included:
+- Embed SQL queries for each chart/visualization
+- Create comprehensive data source inventory:
+  - Table names and schemas
+  - Required columns and data types
+  - Join relationships
+  - Filtering conditions
+  - Aggregation logic
+
+#### If Original SQL is NOT Included:
+- Generate discovery prompts for finding relevant tables
+- Define query construction approach based on visual intent
+- Recommend Snowflake catalog exploration steps:
+  - Suggested tables to investigate
+  - Column naming patterns to search for
+  - Common blockchain data structures to explore
+- Create template SQL structures for each visualization type
+
+### 5. Blockchain Analytics Considerations
+- Identify blockchain-specific metrics (TVL, volume, unique addresses, etc.)
+- Note time-based aggregations (daily, weekly, monthly)
+- Capture protocol-specific logic or calculations
+- Document any cross-chain analysis requirements
+
+### 6. Migration Recommendations
+- Suggest MCP tool calls for data validation
+- Recommend testing strategies for recreated dashboards
+- Identify potential data quality issues
+- Note dependencies on external data sources
+
+## Output Format
+Generate a markdown file with clear sections and consistent formatting suitable for:
+- Technical documentation
+- Business stakeholder review
+- Developer handoff
+- Future maintenance and updates
