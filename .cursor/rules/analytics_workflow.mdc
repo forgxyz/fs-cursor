@@ -1,0 +1,49 @@
+---
+description: Meta prompt for blockchain analytics questions
+globs: 
+alwaysApply: true
+---
+
+# Analytics Workflow for Blockchain Analytics Questions
+
+This rule provides the meta prompt for handling all blockchain analytics questions.
+
+## Process Overview
+
+1. **Read Process Guidelines**: First, read the `@log_methodology.mdc` rule for general guidelines on how to keep track of your process and methodology. Remember that the cursor/ directory should be in the same working directory as the dashboard information. If the workflow is NOT based on a dashboard archive, create a new directory in outputs/ with the analysis name.
+
+2. **Remember Autonomous Execution**: Keep in mind the `@run_commands_autonomously.mdc` rule - execute commands and queries autonomously without asking for permission.
+
+3. **Assess the Main Question**: 
+   - Identify the primary question to answer
+   - This may be provided directly in the conversation or referenced in a context file
+   - Clearly define the scope and objectives of the analysis
+
+4. **Assess Data Sources**:
+   - Refer to `@flipside_mcp_tools.mdc` for detailed instructions on using MCP tools to access data
+   - Prioritize Snowflake warehouse data as the primary source
+   - Use web search tools for validation purposes only
+   - **Important**: Defillama should be prioritized as a secondary data source for validation - note that Defillama tables are available in Snowflake
+
+5. **Generate and Execute Queries**:
+   - **ALWAYS** resort to running queries against the warehouse to determine metrics
+   - Execute queries autonomously without seeking permission
+   - Build comprehensive analysis through iterative querying
+   - Validate results against external sources (primarily Defillama) when necessary
+
+6. **Build Dashboard Concurrently**:
+   - Build the dashboard AS you execute queries
+   - Don't wait until all analysis is complete
+   - Iterate and improve the dashboard throughout the process
+
+7. **Follow Dashboard and Style Guidelines**:
+   - Adhere to the `@generate_dashboard.mdc` rule for dashboard creation
+   - Follow the `@style_guide.mdc` rule for formatting and presentation standards
+
+## Key Principles
+
+- **Data-Driven**: Always query the warehouse first for metrics and data
+- **Autonomous**: Execute queries and commands without asking for permission
+- **Iterative**: Build analysis and dashboard incrementally
+- **Validated**: Use external sources (especially Defillama) for validation
+- **Documented**: Follow logging methodology to track your process
