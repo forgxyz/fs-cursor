@@ -1,7 +1,7 @@
 ---
-description: 
-globs: /outputs/**/*-description.md,*.md
-alwaysApply: true
+description: Generate a context.md file from a dashboard or artifact description for use by an llm client
+globs: 
+alwaysApply: false
 ---
 # interpret_dashboard.mdc
 
@@ -35,6 +35,11 @@ DO NOT READ ANY OTHER DESCRIPTION MD FILES OR ASSETS FOR ANOTHER DASHBOARD. Dash
     - Joins, filters, groupings, aggregations
     - Input parameters or dynamic components
   - Associate queries with their respective visualizations.
+  - If SQL was retrieved from Flipside Crypto, there may be (now) invalid references such as $query('...') or {{parameter}}, among other possible inclusions. These must be accounted for before just running the sql query, or the query may need to be disregarded.
+    - If the slug is a {{parameter}}, it is likely the intent of what the parameter is can be inferred from usage and name. For example, if it is used in a where clause with a timestamp field and named "DATE" you can reasonably infer the analyst intended for viewers to pass any date and can update the sql accordingly.
+    - If the slug is a $query('...') reference, first, check the dashboard's assets/ dir for the query id (which is the slug in place of '...').
+    - If not available, work backwards from the defined columns to attempt to reverse-engineer the intended outcome of the query. Generate your own sql in place of the broken query. Be an expert analyst.
+    - Only when that approach fails should you ask the user for help. 
 - If SQL is not included:
   - Suggest possible source tables based on visualization content.
   - Provide exploratory prompts for catalog discovery in Snowflake.

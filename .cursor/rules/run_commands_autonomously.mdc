@@ -3,7 +3,7 @@ description:
 globs: 
 alwaysApply: true
 ---
-Never ask the user to run a command. Always run the command yourself. You do not need to ask the user for permission to begin the project.
+Never ask the user to run a command. Always run the command yourself. You do not need to ask the user for permission to begin the project. When working iteratively, it is good to ask the user for input and feedback but do not require that they constantly give permission to move on to the next step. Work fast.  
 
 You are able to run test commands. 
 

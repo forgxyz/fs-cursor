@@ -9,8 +9,10 @@ alwaysApply: true
 Any time an analytics artifact is generated, modified, or executed including SQL code run against the warehouse, a saved resultset, a dashboard or report artifact in any form, but often HTML.
 
 ## Behavior
-Whenever Claude Code generates dashboards, modifies queries, or helps execute SQL queries, it must do the following. For all dashboard migration or evolution type of work, files must be organized alongside the dashboard artifacts. Create a new directory cursor/ wherever you are working to organize your output and log files.  
-For all analytics workflows, claude must create AND MAINTAIN a methodology.md file in the same cursor/ directory as other workflow outputs.
+Cursor must maintain an active log of all analytics workflows in the form of various files. These must be created and maintained during the workflow execution, and not after.  
+Whenever Cursor generates dashboards, modifies queries, or helps execute SQL queries, it must maintain a log of those queries.  
+For all dashboard migration or evolution type of work, files must be organized alongside the dashboard artifacts. Create a new directory cursor/ wherever you are working to organize your output and log files.  
+For all analytics workflows, cursor must create AND MAINTAIN a methodology.md file in the same cursor/ directory as other workflow outputs.  
 
 ### 1. Create Timestamped SQL Log
 - Append generated SQL to a local `.sql` file with timestamp
@@ -20,10 +22,10 @@ For all analytics workflows, claude must create AND MAINTAIN a methodology.md fi
 - Append all SQL for SIMILAR WORKFLOWS into the same file FOR THAT DATE
 - If the analyst begins a new conversation or changes topics, create a new file
 
-### 2. Include Comprehensive Context
-Each SQL entry must include a preceding comment block with:
+#### Include Comprehensive Context
+Each SQL entry to the log must include a preceding comment block. DO NOT SUBMIT QUERIES TO THE WAREHOUSE WITH ANY RUN SQL TOOL WITH THE COMMENT BLOCK APPENDED OR IT MAY CREATE SYNTAX ERRORS. ONLY TRY TO EXECUTE CLEAN SQL. ONLY ADD THE COMMENT BLOCK TO THE SQL LOG FILE.
 
-#### Query Metadata
+##### Query Metadata
 ```sql
 -- =============================================================================
 -- QUERY LOG ENTRY
@@ -33,41 +35,7 @@ Each SQL entry must include a preceding comment block with:
 -- =============================================================================
 ```
 
-#### Business Context
-```sql
--- BUSINESS CONTEXT:
--- Question/Request: [what analytical question triggered this query]
--- Dashboard/Component: [which dashboard or component this relates to]
--- Stakeholder: [who initiated the request, if known]
--- Expected Output: [what format/visualization this feeds into]
-```
-
-#### Technical Context
-```sql
--- TECHNICAL CONTEXT:
--- Query Type: [SELECT, INSERT, UPDATE, DELETE, CREATE, etc.]
--- Data Sources: [tables and schemas accessed]
--- Complexity: [SIMPLE, MODERATE, COMPLEX]
--- Dependencies: [other queries or data this depends on]
--- Performance Notes: [expected execution time, optimization notes]
-```
-
-#### Blockchain-Specific Context
-```sql
--- BLOCKCHAIN CONTEXT:
--- Protocol(s): [Ethereum, Polygon, BSC, etc.]
--- Metric Type: [TVL, Volume, Users, Transactions, etc.]
--- Time Range: [specific date range being analyzed]
--- Aggregation: [daily, weekly, monthly, etc.]
--- Chain-specific Logic: [any protocol-specific calculations]
-```
-
-### 3. Version Control Integration
-- Include git commit hash if available
-- Note any related branch or PR information
-- Tag queries that are part of dashboard migrations
-
-### 4. Query Classification
+##### Query Classification
 Add classification tags:
 ```sql
 -- TAGS: [exploration, production, debugging, migration, optimization]
@@ -75,40 +43,11 @@ Add classification tags:
 -- REUSABILITY: [one-time, template, recurring]
 ```
 
-### 5. Error Handling and Debugging
-When SQL fails or needs debugging:
-```sql
--- ERROR LOG:
--- Error Message: [full error text]
--- Attempted Fix: [what was tried to resolve]
--- Resolution: [final working solution]
--- Lessons Learned: [insights for future queries]
-```
 
-### 6. Performance Tracking
-For complex queries, log:
-```sql
--- PERFORMANCE METRICS:
--- Estimated Rows: [expected result set size]
--- Execution Time: [if measured]
--- Resource Usage: [memory, CPU notes]
--- Optimization Applied: [indexes, query hints, etc.]
-```
-
-### 7. File Organization
-- Create separate directories for different projects/dashboards
-- Use consistent naming conventions
-- Include monthly archives for long-term storage
-
-### 8. Security and Compliance
-- Never log sensitive data or credentials
-- Redact any PII or confidential information
-- Include compliance notes for regulatory requirements
-
-### 9. Methodology Documentation
+### 2. Create Methodology Documentation File
 The methodology.md file must be updated as the process evolves and include:
 
-#### Required Sections:
+### Required Sections:
 
 **Analysis Objective**
 - Clear statement of the analytical question(s) being answered
@@ -154,7 +93,7 @@ The methodology.md file must be updated as the process evolves and include:
 - Organize sections logically for easy navigation
 - Ensure transparency in all analytical decisions
 
-## Example Output Format
+#### Example Output Format
 ```sql
 -- =============================================================================
 -- QUERY LOG ENTRY
@@ -201,3 +140,63 @@ ORDER BY trade_date;
 -- END QUERY LOG ENTRY
 -- =============================================================================
 ```
+
+#### Business Context Example
+```sql
+-- BUSINESS CONTEXT:
+-- Question/Request: [what analytical question triggered this query]
+-- Dashboard/Component: [which dashboard or component this relates to]
+-- Stakeholder: [who initiated the request, if known]
+-- Expected Output: [what format/visualization this feeds into]
+```
+
+#### Technical Context Example
+```sql
+-- TECHNICAL CONTEXT:
+-- Query Type: [SELECT, INSERT, UPDATE, DELETE, CREATE, etc.]
+-- Data Sources: [tables and schemas accessed]
+-- Complexity: [SIMPLE, MODERATE, COMPLEX]
+-- Dependencies: [other queries or data this depends on]
+-- Performance Notes: [expected execution time, optimization notes]
+```
+
+#### Blockchain-Specific Context Example
+```sql
+-- BLOCKCHAIN CONTEXT:
+-- Protocol(s): [Ethereum, Polygon, BSC, etc.]
+-- Metric Type: [TVL, Volume, Users, Transactions, etc.]
+-- Time Range: [specific date range being analyzed]
+-- Aggregation: [daily, weekly, monthly, etc.]
+-- Chain-specific Logic: [any protocol-specific calculations]
+```
+
+### Error Handling and Debugging
+When SQL fails or needs debugging:
+```sql
+-- ERROR LOG:
+-- Error Message: [full error text]
+-- Attempted Fix: [what was tried to resolve]
+-- Resolution: [final working solution]
+-- Lessons Learned: [insights for future queries]
+```
+
+### Performance Tracking
+For complex queries, log:
+```sql
+-- PERFORMANCE METRICS:
+-- Estimated Rows: [expected result set size]
+-- Execution Time: [if measured]
+-- Resource Usage: [memory, CPU notes]
+-- Optimization Applied: [indexes, query hints, etc.]
+```
+
+## File Organization
+- Create separate directories for different projects/dashboards
+- Organize sql log and methodology.md file in the working directory for the task at hand
+- Use consistent naming conventions
+
+## Security and Compliance
+- Never log sensitive data or credentials
+- Redact any PII or confidential information
+- Include compliance notes for regulatory requirements
+
