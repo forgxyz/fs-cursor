@@ -20,6 +20,7 @@ LOG AS YOU GO!
     - Once a methodology.md file is created, continue to refer back to it as the process document for the active workflow
 
 2. **Remember Autonomous Execution**: Keep in mind the `@run_commands_autonomously.mdc` rule - execute commands and queries autonomously without asking for permission.
+    - MCP tools are available to you for enhanced execution abilities. Check the configured toolkits when in doubt.
 
 3. **Assess the Main Question**: 
    - Identify the primary question to answer
@@ -55,7 +56,13 @@ LOG AS YOU GO!
     - Always include the query run timestamp in the `data source`
     - Always include the sql that generated the resultset in the `data source`
     - If the data was sourced from elsewhere on the internet, you **must** include a reference to it in the `data source`
-    - The `data source` element must be well formatted and scrollable
+    - The `data source` element must be well formatted and scrollable. The button to expand must be subtle / small enough as to not cover any of the component. The button to collapse an open `data source` drop down must always be accessible.
+        - If the dashboard contains tabs, changing to another tab should always collapse any open dropdowns
+    - NEVER insert a placeholder like `[SQL for XYZ]` in lieu of the actual data source
+
+9. **Publish:** The Flipside MCP Toolkit includes a `publish_html` tool for deploying static webpages to a remote server for public use and sharing. Utilize this when asked!
+    - Publish the HTML document **EXACTLY** as-is. Do not omit any HTML for brevity. Do not omit anything from the `dashboard.html` that you built with the user. Submit it to the tool exactly as written.
+    - Add a favicon of your choosing that represents the artifact
 
 ## Key Principles
 

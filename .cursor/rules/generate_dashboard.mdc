@@ -16,7 +16,8 @@ The generated html must be a singular static webpage for simple deployment.
 The `skills` tools will **greatly** help direct your workflow and can provide a plan of action, use `search_skills` to find out what is available!  
 
 ### IMPORTANT
-ANY insight, visualization, component or explanation that references numbers, data or findings must use real data. Executed sql queries will provide facts and figures to use. Do not fall into a trap of executing a query and then hallucinating estimations. Use the ACTUAL resultset from the query. This is why the rule `log_methodology` exists - to ensure that a trail is created to back up a report.
+ANY insight, visualization, component or explanation that references numbers, data or findings must use real data. Executed sql queries will provide facts and figures to use. Do not fall into a trap of executing a query and then hallucinating estimations. Use the ACTUAL resultset from the query. This is why the rule `log_methodology` exists - to ensure that a trail is created to back up a report.  
+**Never** build a dashboard with simply chart overload. Always include explanatory text and insights.  
 
 
 ## 1. Visualization Selection & Storytelling
