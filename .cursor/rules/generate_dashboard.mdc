@@ -1,7 +1,7 @@
 ---
-description: 
+description: Guidelines for generating dashboards, charts, data visualizations, or tables. Used in a blockchain analytics workflow to guide artifact creation.
 globs: 
-alwaysApply: true
+alwaysApply: false
 ---
 # generate_dashboard.mdc
 
@@ -11,7 +11,11 @@ This rule governs the generation of analytics dashboards and components, ensurin
 ---
 
 ## Analytics Workflow
-Start by understanding the question and assessing all context provided. Review the available tools, referencing `flipside_mcp_tools` as needed. Develop a plan of attack. Build iteratively with the analyst. Listen to feedback and provide expert guidance as a blockchain data analysis extraordinaire.  
+Start by understanding the question and assessing all context provided. Review the available tools, referencing `flipside_mcp_tools` as needed. Develop a plan of attack. Build iteratively but provide expert guidance as a blockchain data analysis extraordinaire.  
+The generated html must be a singular static webpage for simple deployment.
+
+### IMPORTANT
+ANY insight, visualization, component or explanation that references numbers, data or findings must use real data. Executed sql queries will provide facts and figures to use. Do not fall into a trap of executing a query and then hallucinating estimations. Use the ACTUAL resultset from the query. This is why the rule `log_methodology` exists - to ensure that a trail is created to back up a report.
 
 ## 1. Visualization Selection & Storytelling
 - **Start with the Question:** Every dashboard must be anchored to a clear analytical question or business prompt.
@@ -19,60 +23,23 @@ Start by understanding the question and assessing all context provided. Review t
 - **Chart Types:** Select chart types that best reveal trends, comparisons, or insights relevant to the protocol or business context (e.g., big number for engagement, pie/bar for distribution, line/area for trends).
 - **Data-Driven:** Use real, relevant data from provided assets or queries. Do not use placeholders unless explicitly instructed.
 
-### Chart Type Guidelines
-
-#### Time Series Data
-- **Line Charts**: For continuous metrics over time
-- **Area Charts**: For volume or cumulative metrics
-- **Bar Charts**: For discrete time periods or comparisons
-
-#### Comparative Analysis
-- **Horizontal Bar Charts**: For ranking or comparison
-- **Stacked Charts**: For part-to-whole relationships
-- **Grouped Charts**: For side-by-side comparisons
-
-#### Distribution Analysis
-- **Histograms**: For data distribution
-- **Box Plots**: For statistical summaries
-- **Scatter Plots**: For correlation analysis
-
-#### Blockchain-Specific Charts
-- **Candlestick Charts**: For price data
-- **Waterfall Charts**: For flow analysis
-- **Treemaps**: For portfolio composition
-- **Heatmaps**: For correlation matrices
-
-
 ## 2. Layout, Visual Balance & Scale
 - **Responsive Design:** All HTML artifacts must be fully mobile responsive. Use flexible grids or layouts that adapt to both desktop and mobile.
 - **Visual Balance:** Align and size components to avoid awkward whitespace. When using side-by-side elements, ensure their heights are visually balanced (e.g., by setting min-heights or centering content vertically).
 - **Logical Grouping:** Place related charts together (e.g., time series stacked, summary stats beside distribution charts). Use side-by-side or stacked layouts as appropriate for the data and story.
 - **Scale & Fit:** Always be aware of the scale of your data and chart. Ensure axes, labels, and data points fit within the chart area and are never clipped, overflowing, or unreadable. Adjust axis ranges, label formatting, and chart dimensions as needed for clarity and accessibility.
 
-### Interactive Elements
-
-#### Hover States
-- Subtle elevation with drop shadow
-- Color darken by 10% on hover
-- Smooth transitions (200ms ease-in-out)
-
-#### Selection States
-- Primary color border (2px)
-- Background color at 10% opacity
-- Clear visual feedback for user actions
-
-#### Loading States
-- Skeleton screens for data loading
-- Progress indicators for long operations
-- Shimmer effects for content placeholders
 
 ## 3. Explanatory Text & Tone
+- **Labels and Units:** Every visualization absolutely MUST include labels to properly identify what the chart is showing.
 - **Every Chart Needs Context:** Each visualization must include a concise, insightful explanation. Go beyond restating the numbers—help the reader interpret, understand, and act on the data.
 - **Protocol-Aware, Friendly Tone:** Write in a professional yet familiar style. Reference the protocol, ecosystem, or business context directly. Avoid sterile, generic, or "help-texty" language.
 - **Be Proud, Be a Designer:** Treat each dashboard as a product—aim for clarity, delight, and usability.
+- **Brief methodology:** Each visualization, or group of related visualizations, should include a short blurb about the data source and methodology used to derive the insight.  
 
 ## 4. Branding & Theming
-- **On-Brand Visuals:** Match the dashboard's color palette and style to the protocol or ecosystem when possible. If branding is unclear, use modern DeFi conventions. Use web search to find brand guidelines. If they do not exist, attempt to find the landing page for the protocol or ecosystem and read the colors used from the css.
+- **Style guide:** Follow the `style_guide` rule for general vibe and aesthetic.
+- **On-Brand Visuals:** Match the dashboard's color palette and style to the protocol or ecosystem when possible. Use web search to find brand guidelines. If they do not exist, attempt to find the landing page for the protocol or ecosystem and read the colors used from the css.
 - **Consistent Styling:** Use harmonious colors, padding, and font choices for a clean, modern look.
 - **Colors as indicators** When it makes sense, use green/red for clear positive/negative indicators.
 
@@ -82,34 +49,11 @@ Start by understanding the question and assessing all context provided. Review t
 - Left-align body text, center-align titles
 - Use sentence case for labels, title case for headers
 
-## 5. Data Formatting Standards
-
-### Numbers
-- **Large Numbers**: Use K, M, B suffixes (e.g., 1.2M, 5.4B)
-- **Percentages**: Show 1-2 decimal places (e.g., 12.5%)
-- **Currency**: Use appropriate symbols and formatting ($1,234.56)
-- **Decimals**: Consistent precision across related metrics
-
-### Dates and Times
-- **Date Format**: MMM DD, YYYY (e.g., Jan 15, 2024)
-- **Time Format**: HH:MM AM/PM (e.g., 2:30 PM)
-- **Relative Times**: "2 hours ago", "Yesterday", "Last week"
-
-### Blockchain-Specific Formatting
-- **Addresses**: Truncate with ellipsis (0x1234...5678)
-- **Transaction Hashes**: Truncate with ellipsis (0xabcd...ef12)
-- **Gas Prices**: Use Gwei units with 2 decimal places
-- **Block Numbers**: Use comma separators (1,234,567)
-
-## 6. Feedback & Iteration
-- **Incorporate Feedback:** Actively seek and apply user feedback on layout, tone, and data storytelling. Adjust visual balance, explanations, or chart selection as needed.
-- **Continuous Improvement:** Treat each dashboard as a living artifact—refine based on new data, user needs, or design insights.
-
-## 7. Output & File Organization
+## 5. Output & File Organization
 - **Directory Structure:** Save all generated artifacts in the appropriate dashboard or project directory. Use a /cursor/ subdirectory for new or iterative outputs.
 - **Self-Contained Artifacts:** Ensure HTML dashboards are fully static and portable (e.g., inline data, no fetch dependencies unless server context is guaranteed).
 
-## 8. Performance Guidelines
+## 6. Performance Guidelines
 
 ### Optimization Standards
 - Lazy load charts below the fold

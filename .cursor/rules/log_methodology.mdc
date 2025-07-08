@@ -23,7 +23,9 @@ For all analytics workflows, cursor must create AND MAINTAIN a methodology.md fi
 - If the analyst begins a new conversation or changes topics, create a new file
 
 #### Include Comprehensive Context
-Each SQL entry to the log must include a preceding comment block. DO NOT SUBMIT QUERIES TO THE WAREHOUSE WITH ANY RUN SQL TOOL WITH THE COMMENT BLOCK APPENDED OR IT MAY CREATE SYNTAX ERRORS. ONLY TRY TO EXECUTE CLEAN SQL. ONLY ADD THE COMMENT BLOCK TO THE SQL LOG FILE.
+Each SQL entry to the log must include a preceding comment block. DO NOT SUBMIT QUERIES TO THE WAREHOUSE WITH ANY RUN SQL TOOL WITH THE COMMENT BLOCK APPENDED OR IT MAY CREATE SYNTAX ERRORS. ONLY TRY TO EXECUTE CLEAN SQL. ONLY ADD THE COMMENT BLOCK TO THE SQL LOG FILE.  
+
+Keep the sql log otherwise simple and light.
 
 ##### Query Metadata
 ```sql
@@ -45,7 +47,7 @@ Add classification tags:
 
 
 ### 2. Create Methodology Documentation File
-The methodology.md file must be updated as the process evolves and include:
+The methodology.md file must be updated as the process evolves and include a robust log of the analytics workflow, including additional sections about the sql queries executed.
 
 ### Required Sections:
 
