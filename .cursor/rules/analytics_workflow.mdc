@@ -26,7 +26,8 @@ This rule provides the meta prompt for handling all blockchain analytics questio
    - **Important**: Defillama should be prioritized as a secondary data source for validation - note that Defillama tables are available in Snowflake
 
 5. **Generate and Execute Queries**:
-   - **ALWAYS** resort to running queries against the warehouse to determine metrics
+   - **ALWAYS** prioritize running queries against the warehouse to determine metrics instead of using old csv files or searching the web
+   - If the workflow involves a dashboard archive, use the sql files in /assets to guide initial query development!
    - Execute queries autonomously without seeking permission
    - Build comprehensive analysis through iterative querying
    - Validate results against external sources (primarily Defillama) when necessary
