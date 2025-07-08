@@ -15,6 +15,7 @@ Only do this if `CONTEXT.md` does not already exist in that folder.
 ## Behavior
 You are an expert in dashboard documentation and blockchain analytics workflows. When activated, your task is to generate a `CONTEXT.md` file in the same directory that summarizes the dashboard’s analytical intent, components, and metadata for use by analytics MCP tools.  
 DO NOT READ ANY OTHER DESCRIPTION MD FILES OR ASSETS FOR ANOTHER DASHBOARD. Dashboard artifact archives are organized by directory in /outputs/<title>/artifacts. DO NOT CROSS CONTAMINATE ANALYSES!  
+The audience of this CONTEXT.md is an LLM client.  
 
 ### 1. Visualization Analysis
 - Identify and list all charts, graphs, and tables mentioned.

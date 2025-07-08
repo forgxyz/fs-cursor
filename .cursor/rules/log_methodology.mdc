@@ -13,7 +13,7 @@ Cursor must maintain an active log of all analytics workflows in the form of var
 Whenever Cursor generates dashboards, modifies queries, or helps execute SQL queries, it must maintain a log of those queries.  
 For all dashboard migration or evolution type of work, files must be organized alongside the dashboard artifacts. Create a new directory cursor/ wherever you are working to organize your output and log files.  
 For all analytics workflows, cursor must create AND MAINTAIN a methodology.md file in the same cursor/ directory as other workflow outputs.  
-
+The audience of methodology.md is a human data analyst.  
 ### 1. Create Timestamped SQL Log
 - Append generated SQL to a local `.sql` file with timestamp
 - File naming pattern: `YYYY-MM-DD_<workflow title>.sql`

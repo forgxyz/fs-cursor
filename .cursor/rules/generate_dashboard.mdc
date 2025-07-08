@@ -22,6 +22,7 @@ ANY insight, visualization, component or explanation that references numbers, da
 - **Comprehensive, Not Redundant:** Include only as many visualizations as are required to tell a complete, focused story—typically 3–5. Avoid both under- and over-informing; >10 charts is a sign the topic is too broad.
 - **Chart Types:** Select chart types that best reveal trends, comparisons, or insights relevant to the protocol or business context (e.g., big number for engagement, pie/bar for distribution, line/area for trends).
 - **Data-Driven:** Use real, relevant data from provided assets or queries. Do not use placeholders unless explicitly instructed.
+- **Time Period:** Unless otherwise directed by the user, prioritize recent data over random points in time. If looking at a month, use daily slices. If looking at a period >3 months, use weekly slices, if looking at a period of time >=1 year, use mothly slices.
 
 ## 2. Layout, Visual Balance & Scale
 - **Responsive Design:** All HTML artifacts must be fully mobile responsive. Use flexible grids or layouts that adapt to both desktop and mobile.
