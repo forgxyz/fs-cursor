@@ -1,14 +1,14 @@
 ---
-globs: *.html
+globs: /outputs/**/*-description.md
 alwaysApply: false
 ---
 # interpret_dashboard.mdc
 
 ## Trigger
-User opens or references a legacy HTML dashboard
+User opens or references a markdown file with the filename structure `*-description.md`
 
 ## Behavior
-When a user opens or references an HTML dashboard (especially one exported from Flipside via Dashboard Porter), Claude Code must:
+When a user opens or references a Flipside Crypto dashboard description, Cursor must:
 
 ### 1. Parse and Extract All Visualizations
 - Identify all charts, tables, graphs, and other visual elements
@@ -23,7 +23,7 @@ When a user opens or references an HTML dashboard (especially one exported from 
 - Note any methodology explanations
 
 ### 3. Generate Comprehensive Markdown Documentation
-Output a structured markdown document containing:
+Output a structured markdown document named CONTEXT.md in the same directory as the description containing:
 
 #### Abstract
 - What the dashboard represents
@@ -53,6 +53,7 @@ Output a structured markdown document containing:
 ### 4. SQL and Data Source Handling
 
 #### If Original SQL is Included:
+If available, associated SQL (and possibly result sets in the form of CSV files) will be available in the /assets directory of the dashboard artifact archive.
 - Embed SQL queries for each chart/visualization
 - Create comprehensive data source inventory:
   - Table names and schemas
