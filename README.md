@@ -51,8 +51,3 @@ The analytics workflow follows these key steps:
 - **Iterative Development**: Build analysis and dashboards incrementally
 - **External Validation**: Cross-reference results with trusted sources
 - **Documented Process**: Track methodology and decision-making
-
-## Contributing
-
-This repository is part of the Flipside analytics ecosystem. For issues or contributions, please coordinate with the Flipside team.
-
