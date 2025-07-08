@@ -1,5 +1,5 @@
 ---
-description: Provides documentation and guidance for using the flipside mcp tools during any blockchain analytics request or task
+description: Provides documentation and guidance for using the flipside mcp tools during any blockchain analytics request or task. Reference whenever a data question is asked or if a sql query is being generated or executed.
 globs: 
 alwaysApply: false
 ---
@@ -24,6 +24,7 @@ Use the following categories to guide tool selection:
 
 #### Core Analysis Tools
 - `get_meta_prompt`: Retrieve full Growth Intelligence context for dashboards with missing data or partial insights.
+- `run_sql_query`: execute SQL against the Snowflake warehouse. Before running a query with explicit column namnes, it is useful to run `SELECT * FROM <table> LIMIT 1` to return the schema of the target table.
 - `run_public_sql_query`: For re-running original dashboard SQL or prototyping new queries.
 - `search_web`: Supplement on-chain findings with current market data and news.
 - `find_relevant_metrics`: Identify KPIs or metrics that are referenced vaguely or are missing exact names.
