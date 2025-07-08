@@ -49,50 +49,28 @@ This rule defines the visual identity and styling standards for all generated da
 
 ### Visual Elements
 
-
-#### Chart Type Guidelines
-
-##### Time Series Data
-- **Line Charts**: For continuous metrics over time
-- **Area Charts**: For volume or cumulative metrics
-- **Bar Charts**: For discrete time periods or comparisons
-
-##### Comparative Analysis
-- **Horizontal Bar Charts**: For ranking or comparison
-- **Stacked Charts**: For part-to-whole relationships
-- **Grouped Charts**: For side-by-side comparisons
-
-##### Distribution Analysis
-- **Histograms**: For data distribution
-- **Box Plots**: For statistical summaries
-- **Scatter Plots**: For correlation analysis
-
-##### Blockchain-Specific Charts
-- **Candlestick Charts**: For price data
-- **Waterfall Charts**: For flow analysis
-- **Treemaps**: For portfolio composition
-- **Heatmaps**: For correlation matrices
-
 #### Grid Systems
 - **Subtle Grid Patterns**: Light grid overlays (#1a1a1a) for backgrounds
 - **Corner Brackets**: Use corner bracket styling `⌜ ⌝` for card containers and sections
 - **Geometric Frames**: Hexagonal or angular borders for key metrics
 
 #### Interactive Elements
-- **Hover States**: Subtle glow effects with primary blue
-- **Selection**: Bright accent color borders (2px)
-- **Loading States**: Animated skeleton screens with subtle shimmer
+- **Hover States**: Subtle glow effects with primary blue and elevation lift
+- **Selection**: Bright accent color borders (2px) with inset shadow
+- **Loading States**: Animated skeleton screens with subtle shimmer and depth
+- **Micro-interactions**: Smooth transforms and elevation changes on interaction
 
 #### Card Design
-- **Dark Containers**: #1a1a1a background with subtle borders
-- **Corner Brackets**: Visual framing elements in corners
+- **Dark Containers**: #1a1a1a background with subtle borders and layered depth
+- **Corner Brackets**: Visual framing elements in corners with subtle glow
 - **Minimal Padding**: Clean spacing (16px-24px)
-- **Subtle Shadows**: Very light drop shadows for depth
+- **Layered Depth**: Multiple shadow layers and subtle gradients for dimensionality
+- **Surface Elevation**: Different elevation levels for component hierarchy
 
 ### Layout Principles
 
 #### Spatial Organization
-- **Thoughtful Whitespace**: Clean, uncluttered layouts with breathing room, but not large awkward empty spaces between components
+- **Generous Whitespace**: Clean, uncluttered layouts with breathing room
 - **Logical Grouping**: Related metrics clustered together
 - **Asymmetric Balance**: Modern, dynamic layouts avoiding rigid symmetry
 
@@ -100,6 +78,35 @@ This rule defines the visual identity and styling standards for all generated da
 - **Key Metrics**: Large, prominent numbers with colored indicators
 - **Secondary Data**: Smaller, supporting information with muted styling
 - **Contextual Info**: Minimal, subtle explanatory text
+
+### Depth & Elevation System
+
+#### Shadow Layers
+- **Level 1 (Base)**: `box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3)`
+- **Level 2 (Cards)**: `box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2)`
+- **Level 3 (Elevated)**: `box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 4px 10px rgba(0, 0, 0, 0.3)`
+- **Level 4 (Modal/Overlay)**: `box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.4)`
+
+#### Gradient Backgrounds
+- **Surface Gradient**: `linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%)`
+- **Deep Container**: `linear-gradient(135deg, #0a0a0a 0%, #000000 100%)`
+- **Elevated Surface**: `linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%)`
+
+#### Inset Effects
+- **Subtle Inset**: `inset 0 1px 0 rgba(255, 255, 255, 0.1)`
+- **Deep Inset**: `inset 0 2px 4px rgba(0, 0, 0, 0.3)`
+- **Bottom Highlight**: `inset 0 -1px 0 rgba(255, 255, 255, 0.05)`
+
+#### Glow Effects
+- **Accent Glow**: `0 0 20px rgba(59, 130, 246, 0.1)`
+- **Success Glow**: `0 0 20px rgba(16, 185, 129, 0.1)`
+- **Warning Glow**: `0 0 20px rgba(245, 158, 11, 0.1)`
+- **Error Glow**: `0 0 20px rgba(239, 68, 68, 0.1)`
+
+#### Text Shadows
+- **Primary Text**: `text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)`
+- **Secondary Text**: `text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3)`
+- **Accent Text**: `text-shadow: 0 0 4px rgba(59, 130, 246, 0.5)`
 
 ### Data Visualization Style
 
@@ -122,11 +129,15 @@ This rule defines the visual identity and styling standards for all generated da
 - **Subtle Glow**: Electric blue glow effect (#3b82f6 with 20% opacity)
 - **Color Shift**: Brighten colors by 15% on hover
 - **Smooth Transitions**: 200ms ease-in-out for all state changes
+- **Elevation Lift**: Transform translateY(-2px) with enhanced shadow
+- **Scale Enhancement**: Subtle scale(1.02) for interactive elements
 
 #### Selection States
 - **Accent Border**: Primary blue border (2px solid #3b82f6)
 - **Background Highlight**: Subtle background color change (#1a1a1a to #2a2a2a)
-- **Corner Brackets**: Animated corner bracket highlights
+- **Corner Brackets**: Animated corner bracket highlights with glow
+- **Inset Shadow**: Subtle inset shadow for pressed/selected state
+- **Enhanced Depth**: Layered shadow effects for active states
 
 #### Loading States
 - **Skeleton Screens**: Dark gray (#1a1a1a) with subtle shimmer
@@ -138,15 +149,29 @@ This rule defines the visual identity and styling standards for all generated da
 #### Key Metrics Cards
 ```css
 .metric-card {
-  background: #1a1a1a;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
   border: 1px solid #333333;
   border-radius: 8px;
   padding: 24px;
   position: relative;
   overflow: hidden;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
-/* Corner brackets */
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.4),
+    0 4px 10px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(59, 130, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Corner brackets with glow */
 .metric-card::before,
 .metric-card::after {
   content: '';
@@ -154,6 +179,8 @@ This rule defines the visual identity and styling standards for all generated da
   width: 12px;
   height: 12px;
   border: 2px solid #3b82f6;
+  filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.5));
+  transition: all 0.3s ease;
 }
 
 .metric-card::before {
@@ -169,17 +196,34 @@ This rule defines the visual identity and styling standards for all generated da
   border-left: none;
   border-top: none;
 }
+
+.metric-card:hover::before,
+.metric-card:hover::after {
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.8));
+}
 ```
 
 #### Chart Containers
 ```css
 .chart-container {
-  background: #0a0a0a;
+  background: linear-gradient(135deg, #0a0a0a 0%, #000000 100%);
   border: 1px solid #333333;
   border-radius: 8px;
   min-height: 300px;
   padding: 16px;
   position: relative;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(0, 0, 0, 0.3),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.5),
+    inset 0 2px 4px rgba(0, 0, 0, 0.3),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .chart-title {
@@ -187,39 +231,92 @@ This rule defines the visual identity and styling standards for all generated da
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 16px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .chart-subtitle {
   color: #a3a3a3;
   font-size: 14px;
   margin-bottom: 8px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 ```
 
 #### Alert/Insight Boxes
 ```css
 .insight-box {
-  background: #1a1a1a;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
   border-left: 4px solid #f59e0b;
   padding: 16px;
   margin: 16px 0;
   border-radius: 0 8px 8px 0;
+  box-shadow: 
+    0 3px 6px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.insight-box::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, 
+    rgba(245, 158, 11, 0.8) 0%, 
+    rgba(245, 158, 11, 1) 50%, 
+    rgba(245, 158, 11, 0.8) 100%);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
 }
 
 .insight-box.success {
   border-left-color: #10b981;
 }
 
+.insight-box.success::before {
+  background: linear-gradient(180deg, 
+    rgba(16, 185, 129, 0.8) 0%, 
+    rgba(16, 185, 129, 1) 50%, 
+    rgba(16, 185, 129, 0.8) 100%);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
 .insight-box.warning {
   border-left-color: #f59e0b;
+}
+
+.insight-box.warning::before {
+  background: linear-gradient(180deg, 
+    rgba(245, 158, 11, 0.8) 0%, 
+    rgba(245, 158, 11, 1) 50%, 
+    rgba(245, 158, 11, 0.8) 100%);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
 }
 
 .insight-box.error {
   border-left-color: #ef4444;
 }
 
+.insight-box.error::before {
+  background: linear-gradient(180deg, 
+    rgba(239, 68, 68, 0.8) 0%, 
+    rgba(239, 68, 68, 1) 50%, 
+    rgba(239, 68, 68, 0.8) 100%);
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
+}
+
 .insight-box.info {
   border-left-color: #3b82f6;
+}
+
+.insight-box.info::before {
+  background: linear-gradient(180deg, 
+    rgba(59, 130, 246, 0.8) 0%, 
+    rgba(59, 130, 246, 1) 50%, 
+    rgba(59, 130, 246, 0.8) 100%);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
 }
 ```
 

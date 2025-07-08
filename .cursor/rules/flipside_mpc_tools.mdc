@@ -28,9 +28,14 @@ Use the following categories to guide tool selection:
 - `run_public_sql_query`: For re-running original dashboard SQL or prototyping new queries.
 - `search_web`: Supplement on-chain findings with current market data and news.
 - `find_relevant_metrics`: Identify KPIs or metrics that are referenced vaguely or are missing exact names.
+- `publish_html`: Publish a static HTML artifact to Flipside
+
+#### Analytics Workflow Help
+- `search_skills`: search all available defined skills for help with a topic
+- `plan_skill`: ask the requisite skill for a plan of action. Must use `search_skills` first to determine the right skill to use!
 
 #### Expert Consultation
-Recommend expert queries when the dashboard content involves:
+Recommend blockchain expert references when the dashboard content involves:
 - EVM chains → `ask_evm_expert`
 - Solana/SVM → `ask_svm_expert`
 - NEAR, Aptos, Sei → Their respective expert tools

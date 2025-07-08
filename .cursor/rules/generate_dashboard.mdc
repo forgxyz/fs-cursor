@@ -6,16 +6,18 @@ alwaysApply: false
 # generate_dashboard.mdc
 
 ## Purpose
-This rule governs the generation of analytics dashboards and components, ensuring they are insightful, visually balanced, and tailored to the analytical question or business need. It synthesizes best practices, user feedback, and design principles from the Takara Lend on Sei dashboard workflow.
+This rule governs the generation of analytics dashboards and components, ensuring they are insightful, visually balanced, and tailored to the analytical question or business need. It synthesizes best practices, user feedback, and design principles from the Takara Lend on Sei dashboard workflow. Static HTML pages may be deployed to Flipside using the MCP Tool `publish_html`.  
 
 ---
 
 ## Analytics Workflow
 Start by understanding the question and assessing all context provided. Review the available tools, referencing `flipside_mcp_tools` as needed. Develop a plan of attack. Build iteratively but provide expert guidance as a blockchain data analysis extraordinaire.  
-The generated html must be a singular static webpage for simple deployment.
+The generated html must be a singular static webpage for simple deployment.  
+The `skills` tools will **greatly** help direct your workflow and can provide a plan of action, use `search_skills` to find out what is available!  
 
 ### IMPORTANT
 ANY insight, visualization, component or explanation that references numbers, data or findings must use real data. Executed sql queries will provide facts and figures to use. Do not fall into a trap of executing a query and then hallucinating estimations. Use the ACTUAL resultset from the query. This is why the rule `log_methodology` exists - to ensure that a trail is created to back up a report.
+
 
 ## 1. Visualization Selection & Storytelling
 - **Start with the Question:** Every dashboard must be anchored to a clear analytical question or business prompt.
@@ -23,6 +25,31 @@ ANY insight, visualization, component or explanation that references numbers, da
 - **Chart Types:** Select chart types that best reveal trends, comparisons, or insights relevant to the protocol or business context (e.g., big number for engagement, pie/bar for distribution, line/area for trends).
 - **Data-Driven:** Use real, relevant data from provided assets or queries. Do not use placeholders unless explicitly instructed.
 - **Time Period:** Unless otherwise directed by the user, prioritize recent data over random points in time. If looking at a month, use daily slices. If looking at a period >3 months, use weekly slices, if looking at a period of time >=1 year, use mothly slices.
+
+
+### Chart Type Guidelines
+
+#### Time Series Data
+- **Line Charts**: For continuous metrics over time
+- **Area Charts**: For volume or cumulative metrics
+- **Bar Charts**: For discrete time periods or comparisons
+
+#### Comparative Analysis
+- **Horizontal Bar Charts**: For ranking or comparison
+- **Stacked Charts**: For part-to-whole relationships
+- **Grouped Charts**: For side-by-side comparisons
+
+#### Distribution Analysis
+- **Histograms**: For data distribution
+- **Box Plots**: For statistical summaries
+- **Scatter Plots**: For correlation analysis
+
+#### Blockchain-Specific Charts
+- **Candlestick Charts**: For price data
+- **Waterfall Charts**: For flow analysis
+- **Treemaps**: For portfolio composition
+- **Heatmaps**: For correlation matrices
+
 
 ## 2. Layout, Visual Balance & Scale
 - **Responsive Design:** All HTML artifacts must be fully mobile responsive. Use flexible grids or layouts that adapt to both desktop and mobile.
