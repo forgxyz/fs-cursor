@@ -1,14 +1,17 @@
 ---
+description: 
+globs: 
 alwaysApply: true
 ---
 
-# always_log_sql.mdc
+# methodology_logging.mdc
 
 ## Trigger
-Any time SQL is generated, modified, or executed
+Any time an analytics artifact is generated, modified, or executed including SQL code run against the warehouse, a saved resultset, a dashboard or report artifact in any form, but often HTML.
 
 ## Behavior
-Whenever Claude Code generates, modifies, or helps execute SQL queries, it must:
+Whenever Claude Code generates dashboards, modifies queries, or helps execute SQL queries, it must do the following. For all dashboard migration or evolution type of work, files must be organized alongside the dashboard artifacts. Create a new directory cursor/ wherever you are working to organize your output and log files.  
+For all analytics workflows, claude must create AND MAINTAIN a methodology.md file in the same cursor/ directory as other workflow outputs.
 
 ### 1. Create Timestamped SQL Log
 - Append generated SQL to a local `.sql` file with timestamp
@@ -102,6 +105,55 @@ For complex queries, log:
 - Never log sensitive data or credentials
 - Redact any PII or confidential information
 - Include compliance notes for regulatory requirements
+
+### 9. Methodology Documentation
+The methodology.md file must be updated as the process evolves and include:
+
+#### Required Sections:
+
+**Analysis Objective**
+- Clear statement of the analytical question(s) being answered
+- Business context and stakeholder requirements
+- Expected deliverables and success criteria
+
+**Data Sources**
+- Comprehensive list of all data sources used
+- For SQL queries: reference the SQL log file and explain methodology
+- For external data: cite specific sources with access dates
+- Detail any data quality assumptions or limitations
+
+**Methodology**
+- Step-by-step explanation of analytical approach
+- WHERE clause justifications and filtering logic
+- Aggregation methods and rationale
+- Any transformations or calculations performed
+- Assumptions made during analysis
+
+**Technical Implementation**
+- Tools and technologies used
+- Query execution strategy
+- Performance considerations
+- Error handling approaches
+
+**Validation & Quality Assurance**
+- Data validation steps taken
+- Cross-checks performed
+- Known limitations or caveats
+- Confidence levels in results
+
+**Audit Trail**
+- Key decisions made during analysis
+- Alternative approaches considered
+- Reasoning for chosen methodology
+- Change log for methodology updates
+
+#### Documentation Standards:
+- Use clear, concise language suitable for auditors
+- Include specific examples where helpful
+- Reference timestamped SQL log entries
+- Maintain version history of methodology changes
+- Organize sections logically for easy navigation
+- Ensure transparency in all analytical decisions
 
 ## Example Output Format
 ```sql

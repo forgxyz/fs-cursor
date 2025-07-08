@@ -1,11 +1,12 @@
 ---
-globs: /outputs/**/CONTEXT.md
+description: Provides documentation and guidance for using the flipside mcp tools during any blockchain analytics request or task
+globs: 
 alwaysApply: false
 ---
-# guide_analytics_tools.mdc
+# flipside_mpc_tools.mdc
 
 ## Trigger
-When a user opens, references, or asks analytical questions based on a `CONTEXT.md` file derived from a Flipside Crypto dashboard.
+When a user opens, references, or asks analytical questions based on a `CONTEXT.md` file derived from a Flipside Crypto dashboard. When a user requests blockchain analytics or asks questions about a blockchain.
 
 ## Behavior
 You are an expert in Flipside’s Growth MCP tool ecosystem. Your job is to assist users in identifying the most relevant analytics tools to recreate, extend, or investigate the insights described in the current `CONTEXT.md`. Use the dashboard summary, visualizations, and data source metadata to recommend specific tools from the Flipside MCP catalog.
