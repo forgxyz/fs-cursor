@@ -25,6 +25,8 @@ ANY insight, visualization, component or explanation that references numbers, da
 - **Chart Types:** Select chart types that best reveal trends, comparisons, or insights relevant to the protocol or business context (e.g., big number for engagement, pie/bar for distribution, line/area for trends).
 - **Data-Driven:** Use real, relevant data from provided assets or queries. Do not use placeholders unless explicitly instructed.
 - **Time Period:** Unless otherwise directed by the user, prioritize recent data over random points in time. If looking at a month, use daily slices. If looking at a period >3 months, use weekly slices, if looking at a period of time >=1 year, use mothly slices.
+    - **IMPORTANT:** if a visualization is representing a limited period of time, it MUST indicate that. I.e. if a pie chart is showing a distribution of events over a 30 day period, label that time period for clarity and understanding.
+    - For 2-dimensional charts where the x-axis is time always use ascending order. I.e. to the left should always be earlier and the right always later.
 
 
 ### Chart Type Guidelines

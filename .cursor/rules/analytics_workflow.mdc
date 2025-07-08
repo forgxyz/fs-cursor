@@ -9,20 +9,28 @@ alwaysApply: true
 This rule provides the meta prompt for handling all blockchain analytics questions. The general workflow is determine analysis target->build and execute queries->build dashboard, following the logging rules the whole time. The output will be a dashboard in the form of a static HTML page. The workflow must utilize the Flipside MCP tooling to drive analysis.  
 
 ## Process Overview
+0. **Important Considerations**: Always look for relevant cursor rules. Always prioritize local cursor rules over context provided by MCP Tools when there is a conflict. 
+    - Prioritize executing sql queries and returning RECENT DATA. Always check the current date to anchor what recent means.
+    - Follow the logging rule always.
+    - Utilize sql files if they are available!
+    - **Always check the current date when starting a workflow**
 
 1. **Read Process Guidelines**: First, read the `@log_methodology.mdc` rule for general guidelines on how to keep track of your process and methodology. Remember that the cursor/ directory should be in the same working directory as the dashboard information. If the workflow is NOT based on a dashboard archive, create a new directory in outputs/ with the analysis name.  
 LOG AS YOU GO!  
+    - Once a methodology.md file is created, continue to refer back to it as the process document for the active workflow
 
 2. **Remember Autonomous Execution**: Keep in mind the `@run_commands_autonomously.mdc` rule - execute commands and queries autonomously without asking for permission.
 
 3. **Assess the Main Question**: 
    - Identify the primary question to answer
    - This may be provided directly in the conversation or referenced in a context file
+   - If a CONTEXT.md file is provided, thoroughly review the ENTIRE file
    - Clearly define the scope and objectives of the analysis
 
 4. **Assess Data Sources**:
    - Refer to `@flipside_mcp_tools.mdc` for detailed instructions on using MCP tools to access data
-   - Prioritize Snowflake warehouse data as the primary source
+   - ALWAYS try to run queries using the Flipside MCP tools instead of using any cached csv log to ensure we are look at recent dates and current data.
+   - If a cached CSV exists it can be used for data validation, if needed.
    - Use web search tools for validation purposes only
    - **Important**: Defillama should be prioritized as a secondary data source for validation - note that Defillama tables are available in Snowflake and can be used to validate calculated onchain metrics.
 
@@ -34,13 +42,20 @@ LOG AS YOU GO!
    - Validate results against external sources (primarily Defillama) when necessary
 
 6. **Build Dashboard Concurrently**:
-   - Build the dashboard AS you execute queries
-   - Don't wait until all analysis is complete
+   - Build the dashboard AS you execute queries, always update components with valid resultsets in the same message
+   - Don't wait until all analysis is complete to build the dashboard. Construct it as the analytics workflow unfolds
    - Iterate and improve the dashboard throughout the process
 
 7. **Follow Dashboard and Style Guidelines**:
    - Adhere to the `@generate_dashboard.mdc` rule for dashboard creation
    - Follow the `@style_guide.mdc` rule for formatting and presentation standards
+
+8. **Data Transparency and Validation:**
+    - For all data elements (charts, visualizations, big numbers, tables, etc.) be sure to include a `data source` dropdown in the bottom right. It should be subtle as to not detract from the content.
+    - Always include the query run timestamp in the `data source`
+    - Always include the sql that generated the resultset in the `data source`
+    - If the data was sourced from elsewhere on the internet, you **must** include a reference to it in the `data source`
+    - The `data source` element must be well formatted and scrollable
 
 ## Key Principles
 
