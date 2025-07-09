@@ -13,248 +13,309 @@ This rule defines the visual identity and styling standards for all generated da
 ## Visual Style Guide & Brand Identity
 
 ### Core Design Philosophy
-- **Futuristic Gaming Aesthetic**: Embrace a cyberpunk/gaming-inspired visual language with neon accents, grid patterns, and digital interfaces
-- **Dark Mode First**: All dashboards should use dark backgrounds as the primary canvas
-- **Precision & Technical Excellence**: Clean, minimal layouts that emphasize data clarity and professional sophistication
+- **Cyber Gaming Aesthetic**: Embrace a cyberpunk/gaming-inspired visual language with bright cyan neon accents, electric grid patterns, and high-tech digital interfaces
+- **Deep Space Dark Mode**: All dashboards should use deep, dark space backgrounds as the primary canvas with bright electric cyan (#00d4ff) as the signature accent color
+- **Electric & Energetic**: The vibe should be high-energy and electric, with intense neon glows, particle effects, and dynamic lighting that feels alive and powered
+- **Technical Excellence**: Clean, minimal layouts that emphasize data clarity while maintaining that electric cyber aesthetic
 
 ### Color Palette
 
 #### Primary Colors
-- **Background**: Deep black (#000000) or very dark gray (#0a0a0a)
-- **Surface**: Dark gray (#1a1a1a) for cards and containers
-- **Border**: Subtle gray (#333333) for outlines and dividers
+- **Background**: Deep space navy (#0f1419), rich dark blue (#1a1f2e), or cosmic dark (#181c24)
+- **Surface**: Layered darks (#232b3a, #2d3443, #1e242e) for cards and containers, with subtle glassmorphism overlays (rgba(255,255,255,0.02-0.06))
+- **Border**: Bright cyan glow (#00d4ff, #38bdf8) for primary borders and outlines with neon effect
 
 #### Accent Colors
-- **Primary Blue**: Bright electric blue (#3b82f6 or #0066ff) for primary actions and highlights
-- **Success Green**: Vibrant green (#10b981 or #00ff66) for positive metrics and growth indicators
-- **Warning Orange**: Bright orange (#f59e0b or #ff6b35) for alerts and key insights
-- **Error Red**: Vivid red (#ef4444 or #ff3333) for negative metrics and warnings
+- **Primary Cyan**: Bright electric cyan (#00d4ff, #38bdf8) for primary actions, borders, and key highlights - this is the signature color
+- **Secondary Teal**: Vibrant teal (#00ffc3, #5eead4) for supporting elements and secondary highlights
+- **Success Green**: Neon green (#00ff88, #10b981) for positive metrics and growth indicators
+- **Warning Orange**: Bright orange (#ff8f00, #f59e0b) for alerts and important insights
+- **Error Red**: Electric red (#ff4757, #ef4444) for negative trends and critical issues
+- **Electric Blue**: Pure electric blue (#0080ff, #3b82f6) for data visualization and charts
+- **Neon Purple**: Bright purple (#b347ff, #a78bfa) for special categories and highlights
+- **Accent Pink**: Hot neon pink (#ff3d71, #ff6bcb) for standout elements
 
 #### Text Colors
-- **Primary Text**: Pure white (#ffffff) for headings and important data
-- **Secondary Text**: Light gray (#a3a3a3) for descriptions and labels
-- **Muted Text**: Medium gray (#666666) for metadata and less important info
+- **Primary Text**: Pure bright white (#ffffff) for headings and key data points with subtle glow effect
+- **Secondary Text**: Bright cyan-tinted white (#e0f7ff) for descriptions and labels
+- **Muted Text**: Cyan-gray (#8cc8d8) for metadata and supporting information
+- **Accent Text**: Electric cyan (#00d4ff) for interactive elements and highlights
 
 ### Typography
 - **Headings**: Bold, sans-serif fonts (Helvetica, Arial, or system fonts)
 - **Body Text**: Medium weight, clean readability
 - **Data/Numbers**: Monospace or clean sans-serif for precise alignment
-- **Size Hierarchy**: Clear distinction between heading levels (32px, 24px, 18px, 16px, 14px)
+- **Size Hierarchy**: Clear distinction between heading levels (48px, 32px, 24px, 18px, 16px, 14px)
 
 #### Text Usage Guidelines
 - **Font Hierarchy**: Use consistent font weights (400, 500, 600, 700) throughout dashboard
-- **High Contrast**: Maintain excellent contrast ratios (7:1 for AAA compliance)
+- **High Contrast**: Maintain excellent contrast ratios with bright text on dark backgrounds
 - **Alignment**: Left-align body text, center-align key metrics and titles
 - **Case Conventions**: Use sentence case for labels, title case for section headers
 
 ### Visual Elements
 
 #### Grid Systems
-- **Subtle Grid Patterns**: Light grid overlays (#1a1a1a) for backgrounds
-- **Corner Brackets**: Use corner bracket styling `⌜ ⌝` for card containers and sections
-- **Geometric Frames**: Hexagonal or angular borders for key metrics
+- **Cyber Grid Patterns**: Bright cyan grid overlays (#00d4ff with 0.1-0.2 opacity) for backgrounds with subtle animation
+- **Neon Corner Brackets**: Use corner bracket styling `⌜ ⌝` in bright cyan (#00d4ff) with electric glow effect
+- **Geometric Frames**: Angular, tech-inspired borders in cyan and teal for key metrics with pulsing glow
 
 #### Interactive Elements
-- **Hover States**: Subtle glow effects with primary blue and elevation lift
-- **Selection**: Bright accent color borders (2px) with inset shadow
-- **Loading States**: Animated skeleton screens with subtle shimmer and depth
-- **Micro-interactions**: Smooth transforms and elevation changes on interaction
+- **Hover States**: Intense cyan glow effects (#00d4ff) with dramatic elevation lift and scale
+- **Selection**: Bright cyan borders (2-3px) with electric inner glow and backdrop blur
+- **Loading States**: Animated cyan skeleton screens with flowing energy effects
+- **Micro-interactions**: Dynamic transforms with cyan particle trails and energy ripples
 
 #### Card Design
-- **Dark Containers**: #1a1a1a background with subtle borders and layered depth
-- **Corner Brackets**: Visual framing elements in corners with subtle glow
-- **Minimal Padding**: Clean spacing (16px-24px)
-- **Layered Depth**: Multiple shadow layers and subtle gradients for dimensionality
-- **Surface Elevation**: Different elevation levels for component hierarchy
+- **Deep Space Containers**: Use darker backgrounds like `linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%)` with cyan border glow
+- **Neon Corner Brackets**: Bright cyan corner frames (#00d4ff) with intense electric glow and subtle pulse animation
+- **Clean Padding**: Generous spacing (24px-32px) for breathing room
+- **Layered Depth**: Multiple shadow layers with cyan glows for dramatic dimensionality
+- **Surface Elevation**: Distinct elevation levels with cyan accent lighting
 
 ### Layout Principles
 
 #### Spatial Organization
-- **Generous Whitespace**: Clean, uncluttered layouts with breathing room
+- **No overlapping elements**: Clean, uncluttered layouts with breathing between charts. Be especially mindful of long strings, like onchain addresses, that may overflow
 - **Logical Grouping**: Related metrics clustered together
-- **Asymmetric Balance**: Modern, dynamic layouts avoiding rigid symmetry
+- **Dynamic Balance**: Modern, electric layouts with energy flow patterns
 
 #### Component Hierarchy
-- **Key Metrics**: Large, prominent numbers with colored indicators
-- **Secondary Data**: Smaller, supporting information with muted styling
-- **Contextual Info**: Minimal, subtle explanatory text
+- **Key Metrics**: Large, prominent numbers with bright cyan indicators and glow effects
+- **Secondary Data**: Smaller, supporting information with teal styling
+- **Contextual Info**: Minimal, subtle explanatory text in cyan-gray
 
 ### Depth & Elevation System
 
 #### Shadow Layers
-- **Level 1 (Base)**: `box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3)`
-- **Level 2 (Cards)**: `box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2)`
-- **Level 3 (Elevated)**: `box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 4px 10px rgba(0, 0, 0, 0.3)`
-- **Level 4 (Modal/Overlay)**: `box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.4)`
+- **Level 1 (Base)**: `box-shadow: 0 2px 8px rgba(0,212,255,0.15)`
+- **Level 2 (Cards)**: `box-shadow: 0 4px 12px rgba(0,212,255,0.25), 0 2px 8px rgba(15,20,25,0.20)`
+- **Level 3 (Elevated)**: `box-shadow: 0 8px 32px rgba(0,212,255,0.35), 0 4px 16px rgba(15,20,25,0.25)`
+- **Level 4 (Modal/Overlay)**: `box-shadow: 0 20px 48px rgba(0,212,255,0.45), 0 8px 24px rgba(15,20,25,0.30)`
 
 #### Gradient Backgrounds
-- **Surface Gradient**: `linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%)`
-- **Deep Container**: `linear-gradient(135deg, #0a0a0a 0%, #000000 100%)`
-- **Elevated Surface**: `linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%)`
+- **Surface Gradient**: `linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%)`
+- **Deep Container**: `linear-gradient(135deg, #181c24 0%, #232b3a 100%)`
+- **Elevated Surface**: `linear-gradient(135deg, #1a1f2e 0%, #2d3443 100%)`
+- **Cyber Accent Gradient**: `linear-gradient(120deg, #00d4ff 0%, #00ffc3 100%)`
 
 #### Inset Effects
-- **Subtle Inset**: `inset 0 1px 0 rgba(255, 255, 255, 0.1)`
-- **Deep Inset**: `inset 0 2px 4px rgba(0, 0, 0, 0.3)`
-- **Bottom Highlight**: `inset 0 -1px 0 rgba(255, 255, 255, 0.05)`
+- **Subtle Inset**: `inset 0 1px 0 rgba(0, 212, 255, 0.15)`
+- **Deep Inset**: `inset 0 2px 8px rgba(15,20,25,0.25)`
+- **Cyber Highlight**: `inset 0 -1px 0 rgba(0, 212, 255, 0.25)`
 
 #### Glow Effects
-- **Accent Glow**: `0 0 20px rgba(59, 130, 246, 0.1)`
-- **Success Glow**: `0 0 20px rgba(16, 185, 129, 0.1)`
-- **Warning Glow**: `0 0 20px rgba(245, 158, 11, 0.1)`
-- **Error Glow**: `0 0 20px rgba(239, 68, 68, 0.1)`
+- **Primary Cyan Glow**: `0 0 32px rgba(0, 212, 255, 0.4), 0 0 16px rgba(0, 212, 255, 0.25)`
+- **Secondary Teal Glow**: `0 0 32px rgba(0, 255, 195, 0.35)`
+- **Success Glow**: `0 0 24px rgba(0, 255, 136, 0.3)`
+- **Warning Glow**: `0 0 24px rgba(255, 143, 0, 0.3)`
+- **Error Glow**: `0 0 24px rgba(255, 71, 87, 0.3)`
+- **Electric Pulse**: `0 0 40px rgba(0, 212, 255, 0.6), 0 0 20px rgba(0, 212, 255, 0.4)`
 
 #### Text Shadows
-- **Primary Text**: `text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)`
-- **Secondary Text**: `text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3)`
-- **Accent Text**: `text-shadow: 0 0 4px rgba(59, 130, 246, 0.5)`
+- **Primary Text**: `text-shadow: 0 0 8px rgba(0, 212, 255, 0.4), 0 1px 4px rgba(15,20,25,0.5)`
+- **Secondary Text**: `text-shadow: 0 1px 3px rgba(15,20,25,0.25)`
+- **Accent Text**: `text-shadow: 0 0 12px rgba(0, 212, 255, 0.6), 0 0 6px rgba(0, 212, 255, 0.4)`
 
 ### Data Visualization Style
 
 #### Chart Aesthetics
-- **Dark Backgrounds**: All charts use dark canvas (#000000 or #0a0a0a)
-- **Bright Data Colors**: Use accent colors for data visualization
-- **Minimal Grid Lines**: Subtle, barely visible grid (#333333)
-- **Clean Axes**: Minimal styling, clear labels
+- **Deep Space Backgrounds**: All charts use deep dark canvas (#0f1419, #181c24) with subtle cyan grid overlay
+- **Electric Data Colors**: Use bright cyan (#00d4ff), teal (#00ffc3), and electric blue (#0080ff) for primary data
+- **Neon Grid Lines**: Cyan-tinted grid (#00d4ff with 0.1 opacity) with subtle glow
+- **Glowing Axes**: Cyan-tinted axis lines and labels with electric highlight effect
 
 #### Color Usage in Charts
-- **Green**: Growth, positive trends, profit, success metrics
-- **Blue**: Primary data, user metrics, volume
-- **Orange**: Alerts, important insights, warnings
-- **Red**: Negative trends, losses, critical issues
-- **Purple**: Secondary metrics, special categories
+- **Cyan**: Primary data, key metrics, main trends - the signature color (#00d4ff)
+- **Teal**: Secondary data, supporting metrics, comparative data (#00ffc3)
+- **Green**: Growth, positive trends, profit, success metrics (#00ff88)
+- **Orange**: Alerts, important insights, warnings (#ff8f00)
+- **Red**: Negative trends, losses, critical issues (#ff4757)
+- **Electric Blue**: Volume data, user metrics, transaction data (#0080ff)
+- **Purple**: Special categories, unique insights (#b347ff)
+- **Pink**: Standout highlights, featured data points (#ff3d71)
 
 ### Interactive Design Patterns
 
 #### Hover States
-- **Subtle Glow**: Electric blue glow effect (#3b82f6 with 20% opacity)
-- **Color Shift**: Brighten colors by 15% on hover
-- **Smooth Transitions**: 200ms ease-in-out for all state changes
-- **Elevation Lift**: Transform translateY(-2px) with enhanced shadow
-- **Scale Enhancement**: Subtle scale(1.02) for interactive elements
+- **Intense Cyan Glow**: Electric cyan glow effect (#00d4ff with 40-60% opacity) with dramatic lighting
+- **Color Amplification**: Brighten colors by 25-30% on hover for electric effect
+- **Smooth Transitions**: 250ms cubic-bezier(.4,2,.6,1) for dynamic energy feel
+- **Elevation Burst**: Transform translateY(-3px) scale(1.05) with enhanced cyan glow
+- **Energy Ripple**: Subtle scale(1.05) with cyan particle trail effect
 
 #### Selection States
-- **Accent Border**: Primary blue border (2px solid #3b82f6)
-- **Background Highlight**: Subtle background color change (#1a1a1a to #2a2a2a)
-- **Corner Brackets**: Animated corner bracket highlights with glow
-- **Inset Shadow**: Subtle inset shadow for pressed/selected state
-- **Enhanced Depth**: Layered shadow effects for active states
+- **Electric Border**: Bright cyan border (3px solid #00d4ff) with intense outer glow
+- **Deep Contrast**: Background shift from deep space to slightly lighter (#0f1419 to #1a1f2e)
+- **Animated Brackets**: Pulsing cyan corner brackets with flowing energy
+- **Glass Inset**: Deep glassy inset shadow with cyan tinting
+- **Power State**: Layered cyan glow effects for active/powered appearance
 
 #### Loading States
-- **Skeleton Screens**: Dark gray (#1a1a1a) with subtle shimmer
-- **Progress Indicators**: Bright accent color progress bars
-- **Pulse Effects**: Subtle pulsing animation for loading states
+- **Cyber Skeleton**: Deep space (#0f1419) with flowing cyan energy lines and particle streams
+- **Energy Progress**: Bright cyan progress indicators with electric pulse effects
+- **Pulse Effects**: Rhythmic cyan pulsing with energy wave animations
 
 ### Component Styling Guidelines
 
 #### Key Metrics Cards
 ```css
 .metric-card {
-  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-  border: 1px solid #333333;
-  border-radius: 8px;
-  padding: 24px;
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+  border: 2px solid #00d4ff;
+  border-radius: 16px;
+  padding: 32px;
   position: relative;
   overflow: hidden;
   box-shadow: 
-    0 4px 6px rgba(0, 0, 0, 0.3),
-    0 2px 4px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
+    0 4px 12px rgba(0,212,255,0.25),
+    0 2px 8px rgba(15,20,25,0.20),
+    inset 0 1px 0 rgba(0, 212, 255, 0.15),
+    0 0 32px rgba(0, 212, 255, 0.2);
+  backdrop-filter: blur(12px);
+  transition: all 0.25s cubic-bezier(.4,2,.6,1);
 }
 
 .metric-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.05);
+  border-color: #00ffc3;
   box-shadow: 
-    0 8px 25px rgba(0, 0, 0, 0.4),
-    0 4px 10px rgba(0, 0, 0, 0.3),
-    0 0 20px rgba(59, 130, 246, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    0 8px 32px rgba(0,212,255,0.35),
+    0 4px 16px rgba(15,20,25,0.25),
+    0 0 40px rgba(0, 212, 255, 0.6),
+    0 0 20px rgba(0, 212, 255, 0.4),
+    inset 0 1px 0 rgba(0, 212, 255, 0.25);
 }
 
-/* Corner brackets with glow */
+/* Cyber corner brackets with intense glow */
 .metric-card::before,
 .metric-card::after {
   content: '';
   position: absolute;
-  width: 12px;
-  height: 12px;
-  border: 2px solid #3b82f6;
-  filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.5));
-  transition: all 0.3s ease;
+  width: 16px;
+  height: 16px;
+  border: 3px solid #00d4ff;
+  filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.6)) 
+          drop-shadow(0 0 16px rgba(0, 212, 255, 0.4));
+  transition: all 0.25s cubic-bezier(.4,2,.6,1);
 }
 
 .metric-card::before {
-  top: 8px;
-  left: 8px;
+  top: 12px;
+  left: 12px;
   border-right: none;
   border-bottom: none;
 }
 
 .metric-card::after {
-  bottom: 8px;
-  right: 8px;
+  bottom: 12px;
+  right: 12px;
   border-left: none;
   border-top: none;
 }
 
 .metric-card:hover::before,
 .metric-card:hover::after {
-  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.8));
+  border-color: #00ffc3;
+  filter: drop-shadow(0 0 12px rgba(0, 255, 195, 0.8)) 
+          drop-shadow(0 0 24px rgba(0, 255, 195, 0.6));
+  animation: cyberPulse 2s ease-in-out infinite;
+}
+
+@keyframes cyberPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.metric-value {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.4), 0 1px 4px rgba(15,20,25,0.5);
+  margin-bottom: 8px;
+}
+
+.metric-label {
+  color: #e0f7ff;
+  font-size: 16px;
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(15,20,25,0.25);
 }
 ```
 
 #### Chart Containers
 ```css
 .chart-container {
-  background: linear-gradient(135deg, #0a0a0a 0%, #000000 100%);
-  border: 1px solid #333333;
-  border-radius: 8px;
-  min-height: 300px;
-  padding: 16px;
+  background: linear-gradient(135deg, #0f1419 0%, #181c24 100%);
+  border: 2px solid #00d4ff;
+  border-radius: 16px;
+  min-height: 350px;
+  padding: 24px;
   position: relative;
   box-shadow: 
-    0 4px 6px rgba(0, 0, 0, 0.4),
-    inset 0 2px 4px rgba(0, 0, 0, 0.3),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
+    0 4px 12px rgba(0,212,255,0.25),
+    inset 0 2px 8px rgba(15,20,25,0.15),
+    inset 0 -1px 0 rgba(0, 212, 255, 0.25),
+    0 0 24px rgba(0, 212, 255, 0.15);
+  backdrop-filter: blur(8px);
+  transition: all 0.25s cubic-bezier(.4,2,.6,1);
 }
 
 .chart-container:hover {
+  border-color: #00ffc3;
   box-shadow: 
-    0 6px 12px rgba(0, 0, 0, 0.5),
-    inset 0 2px 4px rgba(0, 0, 0, 0.3),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+    0 8px 32px rgba(0,212,255,0.35),
+    inset 0 2px 8px rgba(15,20,25,0.20),
+    inset 0 -1px 0 rgba(0, 212, 255, 0.35),
+    0 0 40px rgba(0, 212, 255, 0.25);
+}
+
+/* Cyber grid overlay */
+.chart-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  opacity: 0.3;
 }
 
 .chart-title {
   color: #ffffff;
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.4), 0 1px 4px rgba(15,20,25,0.5);
 }
 
 .chart-subtitle {
-  color: #a3a3a3;
-  font-size: 14px;
-  margin-bottom: 8px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  color: #e0f7ff;
+  font-size: 16px;
+  margin-bottom: 12px;
+  text-shadow: 0 1px 3px rgba(15,20,25,0.25);
 }
 ```
 
 #### Alert/Insight Boxes
 ```css
 .insight-box {
-  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-  border-left: 4px solid #f59e0b;
-  padding: 16px;
-  margin: 16px 0;
-  border-radius: 0 8px 8px 0;
+  background: linear-gradient(135deg, #1a1f2e 0%, #0f1419 100%);
+  border-left: 4px solid #ff8f00;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 0 16px 16px 0;
   box-shadow: 
-    0 3px 6px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 3px 12px rgba(0,212,255,0.20),
+    inset 0 1px 0 rgba(0, 212, 255, 0.15);
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(6px);
 }
 
 .insight-box::before {
@@ -265,66 +326,66 @@ This rule defines the visual identity and styling standards for all generated da
   bottom: 0;
   width: 4px;
   background: linear-gradient(180deg, 
-    rgba(245, 158, 11, 0.8) 0%, 
-    rgba(245, 158, 11, 1) 50%, 
-    rgba(245, 158, 11, 0.8) 100%);
-  box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
+    rgba(255, 143, 0, 0.8) 0%, 
+    rgba(255, 143, 0, 1) 50%, 
+    rgba(255, 143, 0, 0.8) 100%);
+  box-shadow: 0 0 12px rgba(255, 143, 0, 0.4);
 }
 
 .insight-box.success {
-  border-left-color: #10b981;
+  border-left-color: #00ff88;
 }
 
 .insight-box.success::before {
   background: linear-gradient(180deg, 
-    rgba(16, 185, 129, 0.8) 0%, 
-    rgba(16, 185, 129, 1) 50%, 
-    rgba(16, 185, 129, 0.8) 100%);
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+    rgba(0, 255, 136, 0.8) 0%, 
+    rgba(0, 255, 136, 1) 50%, 
+    rgba(0, 255, 136, 0.8) 100%);
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.4);
 }
 
 .insight-box.warning {
-  border-left-color: #f59e0b;
+  border-left-color: #ff8f00;
 }
 
 .insight-box.warning::before {
   background: linear-gradient(180deg, 
-    rgba(245, 158, 11, 0.8) 0%, 
-    rgba(245, 158, 11, 1) 50%, 
-    rgba(245, 158, 11, 0.8) 100%);
-  box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
+    rgba(255, 143, 0, 0.8) 0%, 
+    rgba(255, 143, 0, 1) 50%, 
+    rgba(255, 143, 0, 0.8) 100%);
+  box-shadow: 0 0 12px rgba(255, 143, 0, 0.4);
 }
 
 .insight-box.error {
-  border-left-color: #ef4444;
+  border-left-color: #ff4757;
 }
 
 .insight-box.error::before {
   background: linear-gradient(180deg, 
-    rgba(239, 68, 68, 0.8) 0%, 
-    rgba(239, 68, 68, 1) 50%, 
-    rgba(239, 68, 68, 0.8) 100%);
-  box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
+    rgba(255, 71, 87, 0.8) 0%, 
+    rgba(255, 71, 87, 1) 50%, 
+    rgba(255, 71, 87, 0.8) 100%);
+  box-shadow: 0 0 12px rgba(255, 71, 87, 0.4);
 }
 
 .insight-box.info {
-  border-left-color: #3b82f6;
+  border-left-color: #00d4ff;
 }
 
 .insight-box.info::before {
   background: linear-gradient(180deg, 
-    rgba(59, 130, 246, 0.8) 0%, 
-    rgba(59, 130, 246, 1) 50%, 
-    rgba(59, 130, 246, 0.8) 100%);
-  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+    rgba(0, 212, 255, 0.8) 0%, 
+    rgba(0, 212, 255, 1) 50%, 
+    rgba(0, 212, 255, 0.8) 100%);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
 }
 ```
 
 #### Data Formatting Standards
 
 ##### Numbers
-- **Large Numbers**: Use K, M, B suffixes with bright accent colors (e.g., **1.2M**, **5.4B**)
-- **Percentages**: Show 1-2 decimal places with color coding (e.g., **12.5%** in green for positive)
+- **Large Numbers**: Use K, M, B suffixes with bright cyan accent colors (e.g., **1.2M**, **5.4B**)
+- **Percentages**: Show 1-2 decimal places with color coding (e.g., **12.5%** in cyan for positive)
 - **Currency**: Use appropriate symbols and formatting (**$1,234.56**)
 - **Decimals**: Consistent precision across related metrics
 
@@ -334,24 +395,24 @@ This rule defines the visual identity and styling standards for all generated da
 - **Relative Times**: "2 hours ago", "Yesterday", "Last week"
 
 ##### Blockchain-Specific Formatting
-- **Addresses**: Truncate with ellipsis (0x1234...5678) in monospace font
+- **Addresses**: Truncate with ellipsis (0x1234...5678) in monospace font with cyan accent
 - **Transaction Hashes**: Truncate with ellipsis (0xabcd...ef12) in monospace font
 - **Gas Prices**: Use Gwei units with 2 decimal places
-- **Block Numbers**: Use comma separators (1,234,567) with subtle color coding
+- **Block Numbers**: Use comma separators (1,234,567) with subtle cyan color coding
 
 ### Branding & Theming
 
 #### Core Principles
-- **Dark Mode Aesthetic**: All dashboards must use dark backgrounds with bright accent colors
-- **Consistent Brand Colors**: Use the defined color palette consistently across all elements
-- **Gaming UI Elements**: Incorporate corner brackets, grid patterns, and technical interface styling
-- **Protocol Integration**: When possible, incorporate protocol-specific colors as accent colors while maintaining the dark theme
-- **Modern DeFi Conventions**: Use contemporary Web3 design patterns and terminology
+- **Deep Space Cyber Aesthetic**: All dashboards must use deep dark space backgrounds with bright electric cyan (#00d4ff) as the signature accent
+- **Consistent Cyber Colors**: Use the defined cyan-focused color palette consistently across all elements
+- **High-Tech UI Elements**: Incorporate neon corner brackets, cyber grid patterns, and electric interface styling
+- **Protocol Integration**: When possible, incorporate protocol-specific colors as secondary accents while maintaining the cyan-dominant theme
+- **Modern DeFi Conventions**: Use contemporary Web3 design patterns with cyber enhancement
 
 #### Language & Tone
-- **Gaming-Inspired Language**: Use terms like "insights," "intelligence," "network," "activation," "building blocks"
+- **Cyber-Tech Language**: Use terms like "insights," "intelligence," "network," "activation," "cyber matrix," "data streams"
 - **Technical Precision**: Emphasize data accuracy and analytical rigor
-- **Professional Gaming Aesthetic**: Balance futuristic styling with business professionalism
+- **Electric & Professional**: Balance high-energy cyber styling with business professionalism
 
 ### Responsive Design Standards
 
@@ -362,12 +423,12 @@ This rule defines the visual identity and styling standards for all generated da
 - **Adaptive Spacing**: Adjust padding and margins for different screen sizes
 
 #### Desktop Enhancement
-- **Hover Effects**: Rich hover states and micro-interactions
+- **Hover Effects**: Rich hover states with intense cyan glow effects
 - **Keyboard Navigation**: Full keyboard accessibility
 - **Multi-Column Layouts**: Utilize wider screens effectively
-- **Advanced Animations**: Subtle but engaging motion design
+- **Advanced Animations**: Electric motion design with energy particle effects
 
 ---
 
 ## Application
-Apply this style guide to all dashboard and component generation. The visual style should always reflect a futuristic, gaming-inspired aesthetic with dark themes, bright accents, and clean technical interfaces. All generated content must maintain consistency with these standards to ensure a cohesive brand experience.
+Apply this style guide to all dashboard and component generation. The visual style should always reflect a futuristic, cyber-gaming aesthetic with deep space dark themes, bright electric cyan (#00d4ff) as the signature color, intense neon glows, and clean high-tech interfaces. All generated content must maintain consistency with these cyber standards to ensure a cohesive, electric, and sophisticated brand experience.

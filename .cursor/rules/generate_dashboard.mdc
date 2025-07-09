@@ -23,7 +23,7 @@ ANY insight, visualization, component or explanation that references numbers, da
 ## 1. Visualization Selection & Storytelling
 - **Start with the Question:** Every dashboard must be anchored to a clear analytical question or business prompt.
 - **Comprehensive, Not Redundant:** Include only as many visualizations as are required to tell a complete, focused story—typically 3–5. Avoid both under- and over-informing; >10 charts is a sign the topic is too broad.
-- **Chart Types:** Select chart types that best reveal trends, comparisons, or insights relevant to the protocol or business context (e.g., big number for engagement, pie/bar for distribution, line/area for trends).
+- **Chart Types:** Select chart types that best reveal trends, comparisons, or insights relevant to the protocol or business context (e.g., big number for engagement, pie/bar for distribution, line/area for trends). Make your chart selection based on the content of the analysis and be sure to elevate components that are rich with data.
 - **Data-Driven:** Use real, relevant data from provided assets or queries. Do not use placeholders unless explicitly instructed.
 - **Time Period:** Unless otherwise directed by the user, prioritize recent data over random points in time. If looking at a month, use daily slices. If looking at a period >3 months, use weekly slices, if looking at a period of time >=1 year, use mothly slices.
     - **IMPORTANT:** if a visualization is representing a limited period of time, it MUST indicate that. I.e. if a pie chart is showing a distribution of events over a 30 day period, label that time period for clarity and understanding.
@@ -53,12 +53,15 @@ ANY insight, visualization, component or explanation that references numbers, da
 - **Treemaps**: For portfolio composition
 - **Heatmaps**: For correlation matrices
 
+#### Other
+- **Big Number**: Use big number components to highlight individually important pieces of information. Do not simply use a lot of big number components, these should be reserved for numbers that make sense in isolation. If a a comparative metric, choose something else.
 
 ## 2. Layout, Visual Balance & Scale
 - **Responsive Design:** All HTML artifacts must be fully mobile responsive. Use flexible grids or layouts that adapt to both desktop and mobile.
 - **Visual Balance:** Align and size components to avoid awkward whitespace. When using side-by-side elements, ensure their heights are visually balanced (e.g., by setting min-heights or centering content vertically).
 - **Logical Grouping:** Place related charts together (e.g., time series stacked, summary stats beside distribution charts). Use side-by-side or stacked layouts as appropriate for the data and story.
 - **Scale & Fit:** Always be aware of the scale of your data and chart. Ensure axes, labels, and data points fit within the chart area and are never clipped, overflowing, or unreadable. Adjust axis ranges, label formatting, and chart dimensions as needed for clarity and accessibility.
+- **All dashboard and component styling, color palette, and visual theme must follow the `style_guide` rule. Do not use custom or ad hoc styles—refer to the style guide for all visual decisions.**
 
 
 ## 3. Explanatory Text & Tone
@@ -69,13 +72,13 @@ ANY insight, visualization, component or explanation that references numbers, da
 - **Brief methodology:** Each visualization, or group of related visualizations, should include a short blurb about the data source and methodology used to derive the insight.  
 
 ## 4. Branding & Theming
-- **Style guide:** Follow the `style_guide` rule for general vibe and aesthetic.
+- **Style guide:** All dashboard and component styling, color palette, and visual theme must follow the `style_guide` rule. Do not use custom or ad hoc styles—refer to the style guide for all visual decisions.
 - **On-Brand Visuals:** Match the dashboard's color palette and style to the protocol or ecosystem when possible. Use web search to find brand guidelines. If they do not exist, attempt to find the landing page for the protocol or ecosystem and read the colors used from the css.
-- **Consistent Styling:** Use harmonious colors, padding, and font choices for a clean, modern look.
+- **Consistent Styling:** Use harmonious colors, padding, and font choices for a clean, modern look. (See style guide)
 - **Colors as indicators** When it makes sense, use green/red for clear positive/negative indicators.
 
 ### Text Usage
-- Use consistent font weights throughout dashboard
+- Use consistent font weights throughout dashboard (see style guide)
 - Maintain proper contrast ratios (4.5:1 minimum)
 - Left-align body text, center-align titles
 - Use sentence case for labels, title case for headers
@@ -98,7 +101,14 @@ ANY insight, visualization, component or explanation that references numbers, da
 - Complete page load within 3 seconds
 - Provide progress indicators for operations > 2 seconds
 
+## 7. Disclaimer
+- Include a very brief disclaimer at the bottom of the dashboard with the following elements:
+    - Methodology: Maximum 2-3 sentence summary of the methodology used to develop the metrics. Be concise.
+    - Publish date: tell viewers when the queries were run
+    - Include a note like "See data source dropdowns for the SQL behind the charts."
+    - NEVER include anything like "Dashboard styled per style guide"
+
 ---
 
 ## Application
-Apply this rule to any analytics dashboard or component generation. Use it in conjunction with interpret_dashboard.mdc, analytics_style_guide.mdc, and methodology_logging.mdc for a complete, auditable, and user-focused analytics workflow.
+Apply this rule to any analytics dashboard or component generation. Use it in conjunction with interpret_dashboard.mdc, analytics_style_guide.mdc, and methodology_logging.mdc for a complete, auditable, and user-focused analytics workflow. For all dashboard and component styling, always refer to the `style_guide` rule.

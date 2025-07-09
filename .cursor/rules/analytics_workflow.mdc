@@ -63,6 +63,7 @@ LOG AS YOU GO!
 9. **Publish:** The Flipside MCP Toolkit includes a `publish_html` tool for deploying static webpages to a remote server for public use and sharing. Utilize this when asked!
     - Publish the HTML document **EXACTLY** as-is. Do not omit any HTML for brevity. Do not omit anything from the `dashboard.html` that you built with the user. Submit it to the tool exactly as written.
     - Add a favicon of your choosing that represents the artifact
+    - If the user asks to publish, deploy, post (or other similar word) the dashboard, then use the `publish_html` tool
 
 ## Key Principles
 
