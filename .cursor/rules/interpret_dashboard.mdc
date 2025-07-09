@@ -1,6 +1,6 @@
 ---
-description: Generate a context.md file from a dashboard or artifact description for use by an llm client. Used when asked to understand a dashboard description to create a context file for an llm.
-globs: 
+description: 
+globs: *-description.md,outputs/**/*-description.md,*/context.md
 alwaysApply: false
 ---
 # interpret_dashboard.mdc

@@ -117,36 +117,6 @@ This rule defines the visual identity and styling standards for all generated da
 - **Secondary Text**: `text-shadow: 0 1px 3px rgba(15,20,25,0.25)`
 - **Accent Text**: `text-shadow: 0 0 12px rgba(0, 212, 255, 0.6), 0 0 6px rgba(0, 212, 255, 0.4)`
 
-#### Data Source Dropdown Positioning
-Data source dropdowns MUST open OVER the component using absolute positioning:
-- Use `position: absolute` with `z-index: 1000` or higher
-- Position dropdown to extend beyond component boundaries
-- For bottom-right placement, use `right: 0; top: 100%` to open below the component
-- Add `max-height` and `overflow-y: auto` for scrollable content
-- Ensure dropdown has sufficient `box-shadow` and `backdrop-filter` for readability over underlying content
-- Use `position: fixed` for very small components where absolute positioning still causes clipping
-
-```css
-.data-source-dropdown {
-  position: absolute;
-  z-index: 1000;
-  right: 0;
-  top: 100%;
-  min-width: 300px;
-  max-height: 400px;
-  overflow-y: auto;
-  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
-  border: 2px solid #00d4ff;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 
-    0 20px 48px rgba(0,212,255,0.45),
-    0 8px 24px rgba(15,20,25,0.30),
-    0 0 40px rgba(0, 212, 255, 0.25);
-  backdrop-filter: blur(12px);
-}
-```
-
 ### Data Visualization Style
 
 #### Chart Aesthetics

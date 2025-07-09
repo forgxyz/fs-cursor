@@ -1,6 +1,6 @@
 ---
-description: Guidelines for generating dashboards, charts, data visualizations, or tables. Used in a blockchain analytics workflow to guide artifact creation.
-globs: 
+description: 
+globs: */CONTEXT.md,*/methodology.md,*.html
 alwaysApply: false
 ---
 # generate_dashboard.mdc
