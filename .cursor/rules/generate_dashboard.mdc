@@ -101,7 +101,23 @@ ANY insight, visualization, component or explanation that references numbers, da
 - Complete page load within 3 seconds
 - Provide progress indicators for operations > 2 seconds
 
-## 7. Disclaimer
+## 7. Data Source Requirements
+**These requirements are essential for dashboard credibility and transparency:**
+
+- **MANDATORY for ALL data elements**: Every chart, visualization, big number, table, and data component MUST include a `data source` dropdown in the bottom right corner
+- **Subtle but accessible**: The dropdown should be subtle enough to not detract from the content but clearly visible
+- **Required content in data source dropdown**:
+    - Query run timestamp (when the data was generated)
+    - Complete SQL query that generated the resultset
+    - If data sourced from external internet sources, include full reference/citation
+- **Formatting requirements**:
+    - Data source element must be well-formatted and scrollable
+    - Button to expand must be small/subtle to avoid covering component content
+    - Button to collapse open dropdown must always be accessible
+    - If dashboard has tabs, switching tabs should collapse any open dropdowns
+- **NEVER use placeholders**: Never insert placeholders like `[SQL for XYZ]` - always include the actual data source
+
+## 8. Disclaimer
 - Include a very brief disclaimer at the bottom of the dashboard with the following elements:
     - Methodology: Maximum 2-3 sentence summary of the methodology used to develop the metrics. Be concise.
     - Publish date: tell viewers when the queries were run
