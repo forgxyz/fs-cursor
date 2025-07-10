@@ -49,7 +49,7 @@ This single command attempts to:
 - ✅ Build a complete HTML dashboard with cyber gaming aesthetic
 - ✅ Create full audit trail and methodology documentation
 
-**Note**: This is experimental and may not work perfectly in all cases. If it fails or you need more control over the process, use the step-by-step workflow below.
+**Note**: This is experimental and may not work perfectly in all cases. If it does stop for user input, try just telling the LLM client to Continue. If that fails or you need more control over the process, use the step-by-step workflow below to take control.
 
 ---
 
