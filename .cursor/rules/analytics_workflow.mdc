@@ -30,8 +30,8 @@ LOG AS YOU GO!
 
 4. **Assess Data Sources**:
    - Refer to `@flipside_mcp_tools.mdc` for detailed instructions on using MCP tools to access data
-   - ALWAYS try to run queries using the Flipside MCP tools instead of using any cached csv log to ensure we are look at recent dates and current data.
-   - If a cached CSV exists it can be used for data validation, if needed.
+   - **CRITICAL**: NEVER use cached CSV files. ALWAYS execute fresh queries using Flipside MCP tools to ensure current, real-time data.
+   - **ONCE CONTEXT.MD AND METHODOLOGY.MD EXIST**: Stop reading JSON/CSV files. Use only the context and methodology documents as information sources.
    - Use web search tools for validation purposes only
    - **Important**: Defillama should be prioritized as a secondary data source for validation - note that Defillama tables are available in Snowflake and can be used to validate calculated onchain metrics.
 

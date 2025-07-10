@@ -32,13 +32,85 @@ This repository is designed to work alongside the [dashboard-dl tool](https://gi
 
 ## Workflow Overview
 
-The analytics workflow follows these key steps:
+This guide walks you through migrating and modernizing your Flipside Data Studio dashboards using Cursor AI with these specialized rules. The process transforms static dashboards into dynamic, current analytics with fresh data and modern presentation.
 
-1. **Process Guidelines**: Read methodology rules for tracking your analytical process
-2. **Autonomous Execution**: Execute commands and queries without manual approval
-3. **Question Assessment**: Identify and scope the primary analytical question
-4. **Data Sources**: Leverage Flipside MCP tools to access blockchain data
-5. **Query Execution**: Run queries against the data warehouse autonomously
-6. **Dashboard Building**: Create dashboards concurrently with analysis
-7. **Validation**: Use external sources (especially DeFiLlama) for result validation
-8. **Data Transparency and Validation**: Guidelines for citing data sources for external validation
+### One-Shot Automated Migration (Experimental)
+
+**NEW**: For the fastest dashboard migration, try the experimental one-shot workflow:
+
+```
+@one_shot_migration.mdc https://flipsidecrypto.xyz/your-dashboard-url
+```
+
+This single command attempts to:
+- ✅ Automatically install dashboard-dl if needed (clones repo, runs `uv sync`)
+- ✅ Download and archive your dashboard to `outputs/` folder
+- ✅ Generate context and execute fresh queries autonomously
+- ✅ Build a complete HTML dashboard with cyber gaming aesthetic
+- ✅ Create full audit trail and methodology documentation
+
+**Note**: This is experimental and may not work perfectly in all cases. If it fails or you need more control over the process, use the step-by-step workflow below.
+
+---
+
+### Step-by-Step Manual Workflow
+
+If the one-shot approach doesn't work or you prefer more control over the process:
+
+### Prerequisites
+
+- **Cursor IDE** with these rules properly loaded
+- **Flipside MCP tools** configured in your environment  
+- **dashboard-dl** tool: [forgxyz/dashboard-dl](https://github.com/forgxyz/dashboard-dl)
+
+### Phase 1: Archive Your Dashboard
+
+**Extract your existing Flipside dashboard:**
+Follow the installation instructions in `dashboard-dl` and run the command from this directory
+```bash
+# Download dashboard archive from Flipside Data Studio
+`dashboard-dl [your-dashboard-url]`
+```
+
+**What you get:** Complete dashboard archive with SQL queries, descriptions, and metadata files.
+
+### Phase 2: Generate Context
+
+**Let Cursor create the analysis context:**
+- Open a new Cursor chat with the `*-description.md` tagged as context and ask Cursor to create a context file.
+- Cursor automatically triggers context generation based on the defined rule
+- Review the generated `CONTEXT.md` for completeness
+- If needed, prompt: *"Please review and enhance the CONTEXT.md based on the dashboard description, follow the rule @interpret_dashboard"*
+
+**What you get:** Structured `CONTEXT.md` that captures original dashboard intent and requirements.
+
+### Phase 3: Migrate & Analyze
+
+**Work with Cursor to execute fresh analysis:**
+- Prompt: *"Analyze the original SQL queries and execute fresh versions using Flipside MCP tools"*
+- Review `methodology.md` as Cursor builds the analysis audit trail
+- **Critical instruction:** *"Use only fresh warehouse data, never cached CSV files"* Cursor should default to executing queries, but the presence of the csv files does sometimes confuse the workflow.
+
+### Phase 4: Rebuild Dashboard
+
+**Collaborate with Cursor to create modern visualization:**
+- Prompt: *"Create a modern HTML dashboard with the query results. Build data visualizations per the requirements in the context file"*
+- Cursor applies responsive design and visual style standards
+- Verify ascending time axes and mandatory data source dropdowns
+- Request adjustments: *"Modify the [chart type] to better highlight [specific insight]"*
+
+### Phase 5: Validate & Publish
+
+**Ensure accuracy and deploy:**
+- Prompt: *"Cross-validate key metrics with DeFiLlama data"*
+- Work with the Flipside Workflow and Skills tools to add new elements, review the existing elements, or take the analysis in a whole new direction. At this point, it is entirely up to you and your needs.
+- Review final dashboard for completeness and accuracy
+- Deploy: *"Publish this dashboard using the MCP publish html tools"*
+- The style guide is something that I like. You can modify or delete the rule if it is creating an artifact that does not feel authentic to you.
+
+### Best Practices
+
+**Let Cursor work autonomously** - The rules are designed for minimal intervention
+**Review CONTEXT.md** - This file guides the entire workflow  
+**Use specific prompts** for modifications rather than micromanaging
+**Check methodology.md** - Understand how Cursor approached the analysis

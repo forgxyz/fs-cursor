@@ -1,0 +1,56 @@
+/* Cyber Gaming Chart Containers - Data Visualization Styling */
+.chart-container {
+  background: linear-gradient(135deg, #0f1419 0%, #181c24 100%);
+  border: 2px solid #00d4ff;
+  border-radius: 16px;
+  min-height: 350px;
+  padding: 24px;
+  position: relative;
+  box-shadow: 
+    0 4px 12px rgba(0,212,255,0.25),
+    inset 0 2px 8px rgba(15,20,25,0.15),
+    inset 0 -1px 0 rgba(0, 212, 255, 0.25),
+    0 0 24px rgba(0, 212, 255, 0.15);
+  backdrop-filter: blur(8px);
+  transition: all 0.25s cubic-bezier(.4,2,.6,1);
+}
+
+.chart-container:hover {
+  border-color: #00ffc3;
+  box-shadow: 
+    0 8px 32px rgba(0,212,255,0.35),
+    inset 0 2px 8px rgba(15,20,25,0.20),
+    inset 0 -1px 0 rgba(0, 212, 255, 0.35),
+    0 0 40px rgba(0, 212, 255, 0.25);
+}
+
+/* Cyber grid overlay */
+.chart-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.chart-title {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.4), 0 1px 4px rgba(15,20,25,0.5);
+}
+
+.chart-subtitle {
+  color: #e0f7ff;
+  font-size: 16px;
+  margin-bottom: 12px;
+  text-shadow: 0 1px 3px rgba(15,20,25,0.25);
+}

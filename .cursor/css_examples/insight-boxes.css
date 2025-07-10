@@ -1,0 +1,76 @@
+/* Cyber Gaming Insight Boxes - Alert and Information Display */
+.insight-box {
+  background: linear-gradient(135deg, #1a1f2e 0%, #0f1419 100%);
+  border-left: 4px solid #ff8f00;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 0 16px 16px 0;
+  box-shadow: 
+    0 3px 12px rgba(0,212,255,0.20),
+    inset 0 1px 0 rgba(0, 212, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+.insight-box::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, 
+    rgba(255, 143, 0, 0.8) 0%, 
+    rgba(255, 143, 0, 1) 50%, 
+    rgba(255, 143, 0, 0.8) 100%);
+  box-shadow: 0 0 12px rgba(255, 143, 0, 0.4);
+}
+
+.insight-box.success {
+  border-left-color: #00ff88;
+}
+
+.insight-box.success::before {
+  background: linear-gradient(180deg, 
+    rgba(0, 255, 136, 0.8) 0%, 
+    rgba(0, 255, 136, 1) 50%, 
+    rgba(0, 255, 136, 0.8) 100%);
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.4);
+}
+
+.insight-box.warning {
+  border-left-color: #ff8f00;
+}
+
+.insight-box.warning::before {
+  background: linear-gradient(180deg, 
+    rgba(255, 143, 0, 0.8) 0%, 
+    rgba(255, 143, 0, 1) 50%, 
+    rgba(255, 143, 0, 0.8) 100%);
+  box-shadow: 0 0 12px rgba(255, 143, 0, 0.4);
+}
+
+.insight-box.error {
+  border-left-color: #ff4757;
+}
+
+.insight-box.error::before {
+  background: linear-gradient(180deg, 
+    rgba(255, 71, 87, 0.8) 0%, 
+    rgba(255, 71, 87, 1) 50%, 
+    rgba(255, 71, 87, 0.8) 100%);
+  box-shadow: 0 0 12px rgba(255, 71, 87, 0.4);
+}
+
+.insight-box.info {
+  border-left-color: #00d4ff;
+}
+
+.insight-box.info::before {
+  background: linear-gradient(180deg, 
+    rgba(0, 212, 255, 0.8) 0%, 
+    rgba(0, 212, 255, 1) 50%, 
+    rgba(0, 212, 255, 0.8) 100%);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
+}

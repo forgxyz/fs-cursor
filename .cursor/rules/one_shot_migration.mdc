@@ -1,0 +1,169 @@
+---
+description: One-shot dashboard migration from Flipside URL to complete HTML dashboard - MANUAL ACTIVATION ONLY
+globs: 
+alwaysApply: false
+---
+# one_shot_migration.mdc
+
+## Trigger
+**MANUAL ACTIVATION ONLY**: This rule is activated when a user explicitly references it with a Flipside dashboard URL:
+`@one_shot_migration.mdc [flipside-dashboard-url]`
+
+## Purpose
+Completely autonomous dashboard migration from a Flipside Data Studio URL to a modern HTML dashboard artifact. This workflow handles everything from tool installation through final dashboard creation without any user intervention.
+
+## Behavior
+You are an autonomous dashboard migration specialist. Your job is to take a Flipside dashboard URL and produce a complete, modern HTML dashboard with fresh data and professional presentation. You must work completely autonomously after receiving the URL. Do NOT stop the workflow until an HTML document has been generated.
+
+## Workflow Overview
+
+### Phase 1: Environment Setup & Validation
+
+1. **Parse and Validate Input**
+   - Extract the dashboard URL from the user's request
+   - Validate it's a proper Flipside dashboard URL
+   - Set autonomous execution mode (NO user intervention from this point)
+
+2. **Check for dashboard-dl Availability**
+   ```bash
+   # Test if dashboard-dl is available
+   dashboard-dl --help
+   ```
+
+3. **Install dashboard-dl if Not Available**
+   If dashboard-dl command fails:
+   ```bash
+   # Clone the repository
+   git clone https://github.com/forgxyz/dashboard-dl
+   cd dashboard-dl
+   
+   # Install dependencies with uv
+   uv sync
+   
+   # Optional: Create executable with pipx (if pipx available)
+   pipx install .
+   
+   # Fallback: Use direct python execution
+   # python -m dashboard_dl [url]
+   ```
+
+   **Error Handling:**
+   - If `git clone` fails: Check network connectivity, provide clear error message and exit
+   - If `uv sync` fails: Check if `uv` is installed, provide installation instructions and exit
+   - If `pipx` fails: Continue without pipx, use direct python execution
+   - Always verify installation success before proceeding
+
+### Phase 2: Dashboard Archive Creation
+
+4. **Execute Dashboard Download**
+   ```bash
+   # Navigate back to project root
+   cd [project-root]
+   
+   # Execute dashboard-dl with the provided URL
+   dashboard-dl [user-provided-url]
+   ```
+
+5. **Verify Archive Creation**
+   - Confirm archive created in `outputs/` folder
+   - Navigate to the created dashboard directory
+   - Verify presence of required files:
+     - `*-description.md` file
+     - `assets/` directory with SQL files
+     - Dashboard metadata files
+
+### Phase 3: Autonomous Analytics Pipeline
+
+6. **Follow Core Analytics Workflow**
+   - Apply `@analytics_workflow.mdc` but with ZERO user intervention
+   - Override any "ask user" or "wait for confirmation" points
+   - Proceed autonomously through all steps
+
+7. **Generate Context File**
+   - Use `@interpret_dashboard.mdc` to create `CONTEXT.md` from description files
+   - Do NOT wait for user review - proceed with generated context
+
+8. **Execute Fresh Data Analysis**
+   - Apply `@flipside_mcp_tools.mdc` for tool selection
+   - **CRITICAL**: Use only fresh warehouse data, NEVER cached CSV files
+   - Use data-discovery-stg → flipside-public → flipside priority order
+   - Execute all SQL queries autonomously
+   - Build complete `methodology.md` documentation
+
+9. **Create Modern Dashboard**
+   - Apply `@generate_dashboard.mdc` for visualization guidelines
+   - Apply `@style_guide.mdc` for cyber gaming aesthetic
+   - **ENFORCE**: Ascending time-based x-axes
+   - **MANDATORY**: Data source dropdowns on every visualization
+   - Create responsive, mobile-friendly HTML
+   - Embed all fresh query results
+
+10. **Apply Logging Standards**
+    - Follow `@log_methodology.mdc` for complete audit trail
+    - Document every step taken
+    - Log all SQL queries with timestamps
+    - Create comprehensive methodology documentation
+
+### Phase 4: Validation & Completion
+
+11. **Final Validation**
+    - Verify HTML dashboard functionality
+    - Confirm all visualizations render correctly
+    - Check data source transparency features
+    - Validate ascending time axes where applicable
+
+12. **Success Reporting**
+    - Report final dashboard location
+    - Summarize what was accomplished
+    - Provide next steps guidance (validation, publishing)
+
+## Critical Requirements
+
+### Autonomous Execution
+- **NO user intervention** after URL is provided
+- Use `@run_commands_autonomously.mdc` principles throughout
+- Provide progress updates but never wait for confirmation
+- Handle errors gracefully but continue where possible
+
+### Data Freshness
+- **NEVER** use cached CSV data
+- **ALWAYS** execute fresh queries against warehouse
+- **ONCE CONTEXT.MD AND METHODOLOGY.MD EXIST**: Use only these as information sources, do not read JSON/CSV files
+
+### Quality Standards
+- Apply complete `@style_guide.mdc` visual standards
+- Follow `@generate_dashboard.mdc` requirements exactly
+- Include all data transparency features
+- Create professional-grade output ready for sharing
+
+### Error Handling
+- Provide clear, actionable error messages
+- Log all failures to methodology.md
+- Exit gracefully if critical dependencies unavailable
+- Use `troubleshoot_scores_query` for SQL debugging if needed
+
+## Expected Output
+
+Upon successful completion, you will have created:
+
+✅ **Complete Dashboard Archive** in outputs/[dashboard-name]/
+✅ **Generated CONTEXT.md** with dashboard requirements  
+✅ **Fresh Query Results** with current blockchain data
+✅ **Professional HTML Dashboard** with cyber gaming aesthetic
+✅ **Complete Methodology Documentation** with full audit trail
+✅ **SQL Query Logs** with timestamps and metadata
+✅ **Data Transparency Features** on all visualizations
+
+## Success Confirmation
+
+Final message should include:
+- Location of completed dashboard HTML file
+- Summary of queries executed and data freshness
+- Confirmation of visual standards applied
+- Next steps for validation/publishing
+
+**Estimated Total Execution Time:** 25-50 minutes depending on dashboard complexity
+
+---
+
+**IMPORTANT**: This rule is designed for complete autonomy. Do not ask for user confirmation, feedback, or intervention at any point after the URL is provided. Work systematically through each phase and provide progress updates along the way.
