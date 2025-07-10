@@ -20,7 +20,8 @@ The `skills` tools will **greatly** help direct your workflow and can provide a 
 
 **ENFORCE FRESH DATA ONLY**: ANY insight, visualization, component or explanation that references numbers, data or findings MUST use real data from fresh SQL execution. Do not fall into a trap of executing a query and then hallucinating estimations. Use the ACTUAL resultset from the query.
 
-**NO STATIC HTML FILES**: Generate dynamic, self-contained HTML with embedded data from fresh queries. NEVER use flat HTML files with static data.  
+**SIMPLE HTML FILES ONLY**: Generate dynamic, self-contained HTML with embedded data from fresh queries. Do not build any dependencies on other files at all.
+  
 **Never** build a dashboard with simply chart overload. Always include explanatory text and insights.  
 
 
